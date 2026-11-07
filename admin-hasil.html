@@ -64,6 +64,25 @@ $('letterImage').addEventListener('change',()=>{
 });
 async function uploadMedia(files,id,kind){const output=[];let n=0;for(const f of files){if(!(isPhoto(kind)?f.type.startsWith('image/'):f.type.startsWith('video/')))throw new Error('Jenis berkas tidak cocok dengan paket');if(f.size>500*1048576)throw new Error('File '+f.name+' lebih dari 500 MB. Upload terpisah atau gunakan file lebih kecil.');const safe=f.name.replace(/[^a-zA-Z0-9._-]/g,'_').slice(-100);const path='hasil/'+id+'/'+(++n)+'-'+safe;status.textContent='Mengunggah '+f.name+' tanpa kompresi...';const item=storageRef(storage,path);await uploadBytes(item,f,{contentType:f.type,customMetadata:{orderId:id}});const url=await getDownloadURL(item);output.push({name:f.name,type:f.type,url,path,size:f.size});}return output;}
 let cached=[];let sourceRequestId='';let cachedRequests=[];function getSearch(){return ($('allSearch')?.value||'').trim().toLowerCase()}function requestMatches(id,v){let q=getSearch();return !q||[id,v.customer,v.phone,v.title,v.kind,v.details].join(' ').toLowerCase().includes(q)}
+
+async function copyOrderCode(value,button){
+ const code=String(value||'').trim();
+ if(!code)return;
+ const old=button.textContent;
+ let copied=false;
+ try{if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(code);copied=true}}catch(e){}
+ if(!copied){
+   const t=document.createElement('textarea');t.value=code;t.setAttribute('readonly','');
+   t.style.cssText='position:fixed;left:8px;top:8px;width:1px;height:1px;opacity:.01';
+   document.body.appendChild(t);t.focus();t.select();t.setSelectionRange(0,t.value.length);
+   try{copied=document.execCommand('copy')}catch(e){}
+   t.remove();
+ }
+ if(copied){button.textContent='✓ Kode berhasil disalin';setTimeout(()=>{if(button.isConnected)button.textContent=old},2400);return;}
+ let manual=document.getElementById('manualCopyCode');
+ if(!manual){manual=document.createElement('div');manual.id='manualCopyCode';manual.style.cssText='position:fixed;z-index:99999;left:12px;right:12px;bottom:14px;max-width:540px;margin:auto;background:white;color:#332532;padding:18px;border:2px solid #ad688a;border-radius:16px;box-shadow:0 8px 35px #0004';manual.innerHTML='<strong>Salin kode secara manual</strong><p>Tekan lama kode berikut, lalu pilih Salin.</p><input id="manualCopyInput" readonly style="width:100%;font-size:17px;padding:12px;border:1px solid #aaa;border-radius:8px"><button type="button" id="closeManualCopy" style="margin-top:10px">Tutup</button>';document.body.appendChild(manual);document.getElementById('closeManualCopy').onclick=()=>manual.remove();}
+ const field=manual.querySelector('input');field.value=code;field.focus();field.select();
+}
 async function loadRequests(){const area=$('requestList');area.textContent='Memuat...';try{const snap=await getDocs(query(collection(db,'permintaan'),orderBy('createdAt','desc'),limit(100)));area.replaceChildren();cachedRequests=snap.docs.filter(x=>!x.data().handled);const pending=cachedRequests.filter(x=>requestMatches(x.id,x.data()));if(!pending.length){area.textContent=getSearch()?'Tidak ada permintaan yang cocok dengan ID/nama ini. Coba hapus sebagian ID atau cek daftar pesanan di bawah.':'Belum ada permintaan baru dari website.';return;}for(const d of pending){const v=d.data(),r=node('div','');r.className='entry';r.append(node('b',(v.customer||'-')+' — '+(v.kind||'-')));const idLine=node('p','ID Pesanan: '+d.id);idLine.className='muted';r.append(idLine);r.append(node('p','WhatsApp: '+(v.phone||'-')+' | '+(v.title||'')));r.append(node('p',v.details||''));const b=node('button','Salin ke Form Admin');b.className='mini';b.onclick=()=>{$('customer').value=v.customer||'';$('phone').value=v.phone||'';$('title').value=v.title||'';const sel=$('kind');if([...sel.options].some(x=>x.value===v.kind))sel.value=v.kind;else if((v.kind||'').startsWith('Undangan'))sel.value='Undangan Digital';$('orderStatus').value='Baru';$('paid').checked=false;$('url').value='';$('letterImage').value='';updateMediaMode();sourceRequestId=d.id;status.textContent='Permintaan '+d.id+' disalin ke formulir. Tekan Simpan Pesanan untuk mencatat dan menandainya sudah ditangani.';$('orderForm').scrollIntoView({behavior:'smooth'});};
 const delRequest=trashButton('Hapus permintaan '+(v.customer||'-'));
 const errBox=node('p','');errBox.className='inline-error';errBox.setAttribute('role','alert');
@@ -76,7 +95,7 @@ function show(){const box=$('orders');box.replaceChildren();const search=$('sear
  for(const {id,d} of matching){const row=node('div','');row.className='entry';row.append(node('b',(d.customer||d.title||'Tanpa nama')+' — '+(d.kind||'Pesanan')));
  row.append(node('p','Judul: '+(d.title||'-')+' | WhatsApp: '+(d.phone||'Belum dicatat')));
  const currentStatus=d.status||'Selesai'; row.append(node('p','Status: '+currentStatus+' | Pembayaran: '+(d.paid===false?'Belum diterima':'Diterima / data lama')));
- if(currentStatus==='Selesai'&&(d.url||d.imageUrl||(d.media||[]).length)&&d.paid!==false){row.append(node('p','Kode pelanggan: '+id));const copy=node('button','Salin kode pelanggan');copy.className='mini';copy.onclick=()=>navigator.clipboard.writeText(id).then(()=>alert('Kode berhasil disalin'));row.append(copy)}
+ if(currentStatus==='Selesai'&&(d.url||d.imageUrl||(d.media||[]).length)&&d.paid!==false){row.append(node('p','Kode pelanggan: '+id));const copy=node('button','Salin kode pelanggan');copy.className='mini';copy.onclick=()=>copyOrderCode(id,copy);row.append(copy)}
  row.append(whatsappIdButton(d.phone,d.customer,id,d.kind,currentStatus==='Selesai'&&(d.url||d.imageUrl||(d.media||[]).length)&&d.paid!==false));
  const sel=node('select','');for(const st of ['Baru','Diproses','Selesai']){const opt=node('option',st);opt.value=st;sel.append(opt)}sel.value=currentStatus;sel.setAttribute('aria-label','Ubah status '+(d.customer||d.title));row.append(sel);
  const mediaOrder=isPhoto(d.kind)||isVideo(d.kind);
@@ -105,7 +124,7 @@ $('orderForm').onsubmit=async e=>{e.preventDefault();const link=$('url').value.t
  await setDoc(doc(db,'pesanan',id),{media,customer:$('customer').value.trim(),phone:$('phone').value.trim(),title:$('title').value.trim(),kind:$('kind').value,status:st,paid,url:mediaOrder?'':link,url2:"",imageUrl:mediaOrder?'':imageUrl,createdAt:serverTimestamp()});
  if(sourceRequestId){await updateDoc(doc(db,'permintaan',sourceRequestId),{handled:true,handledAt:serverTimestamp()});sourceRequestId='';await loadRequests();}
  const box=$('created');box.classList.remove('hidden');box.replaceChildren(node('p','Pesanan berhasil disimpan: '+$('customer').value.trim()));
- if(st==='Selesai'&&(mediaOrder?media.length:(link||letterFile))&&paid){box.append(node('p','Kode rahasia: '+id));const copy=node('button','Salin Kode Pelanggan');copy.onclick=()=>navigator.clipboard.writeText(id);box.append(copy)}else box.append(node('p','Kode belum perlu dibagikan. Ubah menjadi Selesai setelah pembayaran dan hasil siap.'));
+ if(st==='Selesai'&&(mediaOrder?media.length:(link||letterFile))&&paid){box.append(node('p','Kode rahasia: '+id));const copy=node('button','Salin Kode Pelanggan');copy.onclick=()=>copyOrderCode(id,copy);box.append(copy)}else box.append(node('p','Kode belum perlu dibagikan. Ubah menjadi Selesai setelah pembayaran dan hasil siap.'));
  $('orderForm').reset();$('letterPreview').textContent='Belum ada gambar dipilih.';updateMediaMode();status.textContent='';await load()
  }catch(err){status.textContent='Gagal menyimpan: '+err.message}finally{$('save').disabled=false}};
 </script></body></html>
