@@ -1,0 +1,14 @@
+FITUR HASIL FOTO & VIDEO — KITA-KITA UNDANGAN
+
+Undangan Digital: gunakan link.
+Foto Prewedding: unggah foto asli resolusi tinggi (tidak dikompres oleh website).
+Sinematik/Jedag Jedug: unggah video asli (tidak dikompres oleh website).
+
+PERLU DIKETAHUI:
+1. Firebase Storage untuk proyek baru memerlukan paket Blaze (pembayaran berdasarkan pemakaian). Jangan aktifkan tagihan bila belum siap. Tanpa Storage aktif, tombol unggah akan gagal.
+2. Di Firebase Storage > Rules, gunakan aturan terpisah dalam ATURAN-STORAGE.txt, GANTI_UID_ADMIN dengan UID akun Admin. Ini hanya mengizinkan Admin melakukan upload.
+3. Link download Firebase Storage adalah tautan ber-token: siapa pun yang mendapat link dapat mengakses file, walau tidak login. Keamanan kode pesanan dan tautan file belum diuji end-to-end; jangan gunakan untuk data sensitif dulu.
+4. Pengambilan oleh pelanggan memerlukan Firestore Rules yang memperbolehkan get dokumen berdasarkan kode acak; aturan admin-only saat ini akan menolak pelanggan. Jangan membuka akses list publik.
+5. Hapus pesanan di Firestore tidak otomatis menghapus file di Storage. Kelola penyimpanan agar tidak menumpuk.
+6. Foto/video asli tidak otomatis lebih tajam: bergantung file sumber. Unduh via browser bisa membuka berkas lalu pengguna menyimpan ke Files.
+7. Pengunggahan foto besar dari HP memerlukan jaringan stabil. Sebelum menerima pelanggan, uji dengan foto/video percobaan dan verifikasi link hasil.

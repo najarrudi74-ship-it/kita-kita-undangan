@@ -1,0 +1,8 @@
+KITA-KITA UNDANGAN — PESANAN WEBSITE OTOMATIS
+1. Di Firebase Firestore > Rules: gunakan ATURAN-FIRESTORE-UPDATE.txt, ganti GANTI_DENGAN_UID_ADMIN dengan UID admin sendiri, lalu Publish. Simpan cadangan rules lama.
+2. Unggah seluruh isi ZIP website ke Cloudflare Worker yang sama.
+3. Tes formulir dari website, lalu cek Admin > Permintaan Masuk, dan Salin ke Form Admin.
+4. Pesanan yang dikirim langsung ke chat WhatsApp tanpa melewati formulir website TIDAK otomatis masuk Firebase. Catat lewat formulir Admin. Otomatis membaca chat WhatsApp memerlukan WhatsApp Business Platform/API + webhook.
+5. Hanya admin boleh membaca permintaan, tetapi endpoint create dapat dipakai pengunjung anonim. Bisa menerima spam. Aktifkan anti-bot/App Check atau proxy server bila dipakai publik dalam skala lebih besar.
+6. Pengambilan pesanan pelanggan dengan kode tidak diselesaikan oleh aturan ini. Jangan menganggap kode privasi sudah aman; pengamanan fitur itu masih perlu dirancang dan diuji.
+7. File foto/video tidak diupload ke Firebase oleh fitur ini. Hanya metadata pesanan yang disimpan.

@@ -1,0 +1,1 @@
+Pembaruan: kolom Link 2 dihapus dari Admin dan tampilan pelanggan. Kini tersedia satu link undangan dan satu URL gambar surat. Data Link 2 lama tidak ditampilkan, dan dihapus saat pesanan diedit. Desain serta Firebase lainnya tidak berubah.

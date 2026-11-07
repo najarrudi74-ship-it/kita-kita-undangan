@@ -1,0 +1,88 @@
+<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pesan Undangan | KITA-KITA UNDANGAN</title><style>*{box-sizing:border-box}body{margin:0;font-family:system-ui,sans-serif;background:#15101b;color:#f9ebda}header,main,footer{max-width:900px;margin:auto;padding:26px 18px}header{text-align:center}h1{font-family:Georgia,serif;font-size:clamp(30px,7vw,48px)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}.card{padding:24px;border-radius:20px;background:#2a2031;border:1px solid #745a73}.price{font-size:28px;color:#f6c984;font-weight:800}.btn{display:block;text-align:center;text-decoration:none;padding:15px 12px;background:#eec586;color:#281723;border-radius:12px;font-weight:800;margin:15px 0}.secondary{background:#493750;color:white;border:1px solid #b58cae}.muted{color:#d1bbd0}.paper{max-width:520px;margin:18px auto;padding:36px 22px;border-radius:24px;text-align:center;min-height:90vh}.basic{background:#f4e9d9;color:#513d36;border:2px solid #bc9870}.premium{background:radial-gradient(circle at top,#68416f,#25192c 75%);border:2px solid #d8a7d6}.royal{background:radial-gradient(circle at top,#654d2d,#181116 80%);border:5px double #eec586}.orn{font-size:55px;animation:float 3s ease-in-out infinite alternate}@keyframes float{to{transform:translateY(-10px)}}.paper h1{margin:35px 0}.paper p{line-height:1.9}.section{padding:28px 0;border-bottom:1px solid #9c837566}input,textarea,select{width:100%;padding:13px;border-radius:10px;border:1px solid #b59aa7;background:#241c2b;color:white;margin:7px 0 16px}label{display:block}button{border:0;width:100%;cursor:pointer;font-size:16px}small{color:#c6b6c9}.giftbox{margin:22px 0;padding:20px;border:1px solid #9b779f;border-radius:18px;background:#33273b}.giftbox h2{margin:0 0 10px;font:26px Georgia,serif;color:#f6c984}.hint{font-size:13px;color:#d6c5d6;line-height:1.6}.preview{display:none;max-width:190px;max-height:190px;object-fit:contain;background:white;padding:8px;border-radius:12px;margin:8px auto 18px}.check{display:flex;gap:9px;align-items:flex-start}.check input{width:auto;margin:4px 0}.check label{flex:1}.wa{background:#7cddb0;color:#173b2a}.giftbox[hidden]{display:none}.royal-options{margin:22px 0;padding:20px;border:1px solid #c49a62;border-radius:18px;background:#2b2430}.royal-options h2{margin:0 0 8px;color:#f6c984;font:26px Georgia,serif}.royal-options[hidden]{display:none}.mini-preview{display:none;max-width:190px;max-height:190px;object-fit:contain;background:#fff;padding:7px;border-radius:10px;margin:8px 0}.file-note{color:#d6c5d6;font-size:12px}
+/* HD display: vector assets stay resolution-independent; preserve original layout */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}svg{shape-rendering:geometricPrecision}img[src$=".svg"]{image-rendering:auto}
+</style></head><body><header><a class="btn secondary" href="index.html">← Kembali ke Katalog</a><h1>Formulir Pemesanan</h1><p>Isi data untuk mengirim pesanan melalui WhatsApp. Belum ada pembayaran otomatis.</p></header><main><form id="form"><label>Nama pemesan / pelanggan<input id="namaPelanggan" required maxlength="100" autocomplete="name" placeholder="Nama lengkap pemesan"></label><label>Nomor WhatsApp pemesan<input id="waPelanggan" required type="tel" inputmode="tel" autocomplete="tel" pattern="[+0-9 ()-]{8,20}" placeholder="08xxxxxxxxxx"></label><label>Paket<select id="paket"><option value="Basic">Basic — Rp25.000</option><option value="Premium">Premium — Rp50.000</option><option value="Royal">Royal — Rp100.000</option></select></label><label>Nama pengantin pertama<input id="a" required placeholder="Andi"></label><label>Nama pengantin kedua<input id="b" required placeholder="Siti"></label><label>Tanggal acara<input id="tgl" type="date" required></label><label>Lokasi acara<textarea id="lokasi" required></textarea></label><div class="giftbox"><h2>E-Wallet, Rekening Bank & Kode QR</h2><p class="hint">Isi jika ingin menampilkan rekening bank, DANA, atau QR hadiah pada undangan. Boleh dikosongkan.</p>
+<label>Pilih bank atau e-wallet<select id="metode"><option value="">Tidak menggunakan</option><option value="DANA">DANA</option><option value="BCA">BCA</option><option value="BRI">BRI</option><option value="BNI">BNI</option><option value="Mandiri">Mandiri</option><option value="BSI">BSI</option><option value="GoPay">GoPay</option><option value="OVO">OVO</option><option value="ShopeePay">ShopeePay</option><option value="Bank / e-wallet lainnya">Bank / e-wallet lainnya</option></select></label>
+<label>Nama pemilik rekening / e-wallet<input id="pemilik" placeholder="Nama sesuai rekening"></label>
+<label>Nomor rekening / nomor DANA<input id="nomor" inputmode="numeric" autocomplete="off" placeholder="Masukkan nomor bank atau e-wallet"></label>
+<label>Foto kedua mempelai untuk Royal Buku (opsional)<input id="fotoMempelai" type="file" accept="image/png,image/jpeg,image/webp"></label>
+<img id="fotoMempelaiPreview" class="preview" alt="Pratinjau foto mempelai">
+<label>Unggah gambar kode QR pelanggan (opsional)<input id="qr" type="file" accept="image/png,image/jpeg,image/webp"></label>
+<img id="qrPreview" class="preview" alt="Pratinjau kode QR yang dipilih">
+<p class="hint">Gambar QR hanya dipratinjau di HP ini. Setelah mengirim formulir ke WhatsApp, <strong>kirim gambar QR secara terpisah di chat</strong> karena WhatsApp tidak dapat melampirkan gambar otomatis dari formulir website.</p>
+</div>
+<section class="royal-options" id="royalOptions" hidden>
+<h2>Request Tema & Musik Royal</h2>
+<p class="hint">Khusus paket Royal: pelanggan boleh memakai tema contoh atau meminta tema dan musik sesuai keinginan.</p>
+<label>Pilihan tema Royal
+<select id="temaPilihan">
+<option value="Tema contoh Royal Black & Gold">Pakai tema contoh Royal (Black & Gold)</option>
+<option value="Request tema sendiri">Request tema sendiri</option>
+</select></label>
+<div id="temaCustom" hidden>
+<label>Jelaskan tema yang diinginkan<textarea id="temaDetail" rows="3" placeholder="Contoh: hitam emas, bunga mawar, kaligrafi modern, animasi lembut"></textarea></label>
+<label>Upload gambar referensi tema (opsional)<input type="file" id="temaGambar" accept="image/png,image/jpeg,image/webp"></label>
+<img id="temaPreview" class="mini-preview" alt="Pratinjau referensi tema">
+</div>
+<label>Pilihan musik
+<select id="musikPilihan">
+<option value="Musik bawaan Royal">Pakai musik bawaan Royal</option>
+<option value="Request musik sendiri">Request musik sendiri</option>
+<option value="Tanpa musik">Tanpa musik</option>
+</select></label>
+<div id="musikCustom" hidden>
+<label>Judul lagu / musik yang diminta<input id="musikJudul" placeholder="Judul musik atau nama penyanyi"></label>
+<label>Link referensi musik (opsional)<input id="musikLink" type="url" placeholder="https://..."></label>
+<label>Upload file musik milik pelanggan (opsional)<input id="musikFile" type="file" accept="audio/*,video/mp4,video/quicktime"></label>
+</div>
+<p class="file-note">File gambar tema dan musik tidak otomatis terkirim lewat formulir WhatsApp. Setelah mengirim pesanan, pelanggan perlu mengirim file tersebut di chat secara terpisah. Penggunaan musik mengikuti izin/hak cipta yang berlaku.</p>
+</section>
+<button class="btn" type="submit">Buat Ringkasan Pesanan</button></form><div id="hasil" class="card" hidden></div></main><script type="module">
+import {catatPermintaan} from './pesanan-masuk.js';
+const q=new URLSearchParams(location.search).get('paket');
+if(q){const v=q.charAt(0).toUpperCase()+q.slice(1).toLowerCase();if(['Basic','Premium','Royal'].includes(v))document.getElementById('paket').value=v;}
+const paket=document.getElementById('paket'),royalOptions=document.getElementById('royalOptions'),temaPilihan=document.getElementById('temaPilihan'),musikPilihan=document.getElementById('musikPilihan');
+function syncRoyal(){royalOptions.hidden=paket.value!=='Royal';document.getElementById('temaCustom').hidden=temaPilihan.value!=='Request tema sendiri';document.getElementById('musikCustom').hidden=musikPilihan.value!=='Request musik sendiri'}
+paket.addEventListener('change',syncRoyal);temaPilihan.addEventListener('change',syncRoyal);musikPilihan.addEventListener('change',syncRoyal);syncRoyal();
+const temaGambar=document.getElementById('temaGambar'),temaPreview=document.getElementById('temaPreview');let temaUrl;
+temaGambar.addEventListener('change',()=>{if(temaUrl)URL.revokeObjectURL(temaUrl);temaPreview.style.display='none';const f=temaGambar.files[0];if(!f)return;if(!f.type.startsWith('image/')){alert('Pilih gambar referensi PNG/JPG/WEBP');temaGambar.value='';return}temaUrl=URL.createObjectURL(f);temaPreview.src=temaUrl;temaPreview.style.display='block'});
+const fotoMempelai=document.getElementById('fotoMempelai'),fotoMempelaiPreview=document.getElementById('fotoMempelaiPreview');let fotoUrl=null;
+fotoMempelai.addEventListener('change',()=>{if(fotoUrl)URL.revokeObjectURL(fotoUrl);const f=fotoMempelai.files[0];fotoMempelaiPreview.style.display='none';if(!f)return;if(!f.type.startsWith('image/')){fotoMempelai.value='';return}fotoUrl=URL.createObjectURL(f);fotoMempelaiPreview.src=fotoUrl;fotoMempelaiPreview.style.display='block'});
+const qr=document.getElementById('qr'),preview=document.getElementById('qrPreview');let previewUrl=null;
+qr.addEventListener('change',()=>{if(previewUrl)URL.revokeObjectURL(previewUrl);const f=qr.files[0];preview.style.display='none';if(!f)return;if(!f.type.startsWith('image/')){alert('Pilih gambar PNG, JPG, atau WEBP');qr.value='';return;}previewUrl=URL.createObjectURL(f);preview.src=previewUrl;preview.style.display='block'});
+document.getElementById('form').addEventListener('submit',e=>{
+ e.preventDefault();const x=id=>document.getElementById(id).value.trim();
+ const metode=x('metode'),pemilik=x('pemilik'),nomor=x('nomor'),adaQr=qr.files.length>0;
+ if((metode||pemilik||nomor)&&!(metode&&pemilik&&nomor)){alert('Untuk amplop digital, lengkapi nama bank/e-wallet, nama pemilik, dan nomor rekening. Atau kosongkan semuanya.');return;}
+ const royal=paket.value==='Royal';
+ if(royal&&temaPilihan.value==='Request tema sendiri'&&!x('temaDetail')){alert('Tuliskan tema Royal yang diinginkan.');return}
+ if(royal&&musikPilihan.value==='Request musik sendiri'&&!x('musikJudul')&&!x('musikLink')&&!document.getElementById('musikFile').files.length){alert('Masukkan judul, link, atau file referensi musik.');return}
+ const tambahanRoyal=royal?`\n\n👑 *REQUEST KHUSUS ROYAL*\n🎨 *Tema:* ${temaPilihan.value}\n📝 *Detail tema:* ${temaPilihan.value==='Request tema sendiri'?x('temaDetail'):'-'}\n🖼️ *Gambar referensi:* ${temaGambar.files.length?'Ada — dikirim terpisah':'Tidak ada'}\n🎵 *Pilihan musik:* ${musikPilihan.value}\n🎶 *Judul musik:* ${musikPilihan.value==='Request musik sendiri'?x('musikJudul')||'-':'-'}\n🔗 *Link musik:* ${musikPilihan.value==='Request musik sendiri'?x('musikLink')||'-':'-'}\n📎 *File musik:* ${document.getElementById('musikFile').files.length?'Ada — dikirim terpisah':'Tidak ada'}`:'';
+ const s=`✨ *KITA-KITA UNDANGAN* ✨
+━━━━━━━━━━━━━━━━━━━━
+💌 *FORMULIR PESANAN DIGITAL*
+━━━━━━━━━━━━━━━━━━━━
+👤 *Nama pelanggan:* ${x('namaPelanggan')}
+📱 *WhatsApp:* ${x('waPelanggan')}
+🎁 *Paket:* ${x('paket')}
+💍 *Nama mempelai:* ${x('a')} & ${x('b')}
+📅 *Tanggal acara:* ${x('tgl')}
+📍 *Lokasi acara:* ${x('lokasi')}
+
+🎀 *AMPLOP DIGITAL / WEDDING GIFT*
+🏦 *Bank / e-wallet:* ${metode||'-'}
+👤 *Nama pemilik:* ${pemilik||'-'}
+💳 *Nomor rekening / DANA:* ${nomor||'-'}
+🔳 *Kode QR:* ${adaQr?'Ada — dikirim di chat':'Tidak dilampirkan'}${tambahanRoyal}
+
+💬 Mohon konfirmasi detail pesanan.
+━━━━━━━━━━━━━━━━━━━━
+💗 *Terima kasih!*`;
+ const el=document.getElementById('hasil');el.hidden=false;el.replaceChildren();
+ const txt=document.createElement('div');txt.textContent=s;txt.style.whiteSpace='pre-line';el.appendChild(txt);
+ const wa=document.createElement('a');wa.className='btn wa';wa.textContent='Kirim Pesanan ke WhatsApp';wa.href='https://wa.me/6283181882971?text='+encodeURIComponent(s);wa.target='_self';wa.addEventListener('click',async event=>{event.preventDefault();if(wa.dataset.busy)return;wa.dataset.busy='1';wa.textContent='Mencatat pesanan...';try{const id=await catatPermintaan({customer:x('namaPelanggan'),phone:x('waPelanggan'),kind:'Undangan '+x('paket'),title:'Undangan '+x('a')+' & '+x('b'),details:['Tanggal: '+x('tgl'),'Lokasi: '+x('lokasi'),'Tema: '+(royal?temaPilihan.value:'-')].join(' | ')});const kartu=new URL('kartu-pesanan.html',location.href);kartu.searchParams.set('ref',id);kartu.searchParams.set('paket','Undangan '+x('paket'));location.href=wa.href+encodeURIComponent('\n🧾 *ID Pesanan:* '+id+'\n\n🌈 *KARTU PESANAN DIGITAL RGB* ✨\n🔗 '+kartu.href+'\n_Buka link untuk melihat kartu animasi berwarna._');}catch(err){alert('Pesanan belum masuk database. Periksa internet atau aturan Firebase. '+err.message);wa.textContent='Kirim Pesanan ke WhatsApp';wa.dataset.busy='';}});el.appendChild(wa);
+ const btn=document.createElement('button');btn.type='button';btn.className='btn secondary';btn.textContent='Salin Ringkasan';btn.onclick=()=>navigator.clipboard.writeText(s).then(()=>alert('Ringkasan disalin')).catch(()=>alert('Silakan salin ringkasan secara manual'));el.appendChild(btn);
+ if(adaQr||fotoMempelai.files.length||royal&&(temaGambar.files.length||document.getElementById('musikFile').files.length)){const note=document.createElement('p');note.className='hint';note.textContent='Penting: setelah WhatsApp terbuka, kirim foto mempelai, file QR, referensi tema, atau musik yang dipilih secara manual (jika ada).';el.appendChild(note);}
+ el.scrollIntoView({behavior:'smooth'});
+});
+</script></body></html>

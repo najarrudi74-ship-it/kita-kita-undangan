@@ -1,0 +1,1 @@
+UPDATE: Kolom gambar surat sekarang membuka galeri iPhone/Android. Untuk benar-benar mengunggah gambar dan mengirim hasil ke pelanggan, aktifkan Firebase Storage beserta aturan akses yang aman. Memilih gambar saja tidak menyimpannya ke database. Link undangan dapat dipakai tanpa Storage. Jangan sebarkan kode pelanggan.

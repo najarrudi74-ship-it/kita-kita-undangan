@@ -1,0 +1,33 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function admin() {
+      return request.auth != null && request.auth.uid == 'GANTI_DENGAN_UID_ADMIN';
+    }
+    match /pesanan/{id} {
+      allow read, write: if admin();
+    }
+    match /permintaan/{id} {
+      allow create: if request.resource.data.keys().hasOnly([
+        'customer','phone','kind','title','details','source','handled','createdAt'
+      ])
+      && request.resource.data.keys().hasAll([
+        'customer','phone','kind','title','details','source','handled','createdAt'
+      ])
+      && request.resource.data.customer is string
+      && request.resource.data.customer.size() > 0 && request.resource.data.customer.size() <= 100
+      && request.resource.data.phone is string
+      && request.resource.data.phone.size() >= 8 && request.resource.data.phone.size() <= 20
+      && request.resource.data.kind is string
+      && request.resource.data.kind.size() > 0 && request.resource.data.kind.size() <= 60
+      && request.resource.data.title is string
+      && request.resource.data.title.size() > 0 && request.resource.data.title.size() <= 120
+      && request.resource.data.details is string
+      && request.resource.data.details.size() <= 1200
+      && request.resource.data.source == 'website'
+      && request.resource.data.handled == false
+      && request.resource.data.createdAt == request.time;
+      allow get, list, update, delete: if admin();
+    }
+  }
+}
