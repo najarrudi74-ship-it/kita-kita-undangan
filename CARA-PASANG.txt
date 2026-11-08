@@ -1,15 +1,14 @@
-KITA-KITA UNDANGAN — UPDATE KHUSUS ROYAL CONTOH 1
+PERBAIKAN GAMBAR HILANG — CONTOH ROYAL 1
 
-1. Buka folder repository website Kita-Kita Undangan di GitHub.
-2. GANTI file royal.html lama dengan royal.html dari ZIP ini.
-3. UPLOAD folder assets beserta isinya ke root repository, sejajar dengan royal.html.
-4. UPLOAD musik-royal.mp3 ke lokasi yang sama dengan royal.html.
-5. Commit / simpan perubahan. Cloudflare akan memperbarui website bila otomatis deploy aktif.
-6. Buka halaman contoh Royal 1, lalu refresh paksa browser atau coba mode privat jika masih ada cache.
+File ini tidak membutuhkan folder assets atau file MP3 terpisah, karena gambar dan musik sudah tertanam langsung di royal.html.
 
-PENTING: Jangan menghapus file lain. Update ini hanya contoh Royal 1,
-tidak mengubah Basic, Premium, Royal buku, admin, ataupun Firebase.
+1. Masuk GitHub repo Kita-Kita Undangan.
+2. Buka royal.html pada folder yang sama seperti sebelumnya.
+3. GANTI SELURUH ISI royal.html dengan isi file royal.html ini, lalu Commit changes. (Bila GitHub menyediakan Upload files, boleh mengganti dengan cara itu.)
+4. Tunggu deployment Cloudflare yang terhubung GitHub selesai.
+5. Buka halaman Royal Contoh 1, refresh paksa Ctrl+F5 di laptop, atau tutup-buka tab di HP.
 
-Tampilan: terinspirasi dari video rujukan (bingkai melengkung, pepohonan, ornamen, bangunan klasik), bukan versi sampul minimalis.
-Musik: video terbaru yang Anda kirim, dikonversi menjadi MP3.
-Nama contoh: Arga & Sekar. Form ucapan contoh disimpan lokal di perangkat.
+PENTING: Tidak perlu menghapus folder assets lama. Jangan mengubah index.html, admin, Basic, Premium, royal buku, atau Firebase.
+Tidak perlu mengunggah musik-royal.mp3 atau folder assets untuk versi Royal 1 ini.
+
+JIKA MASIH GELAP: pastikan halaman royal.html yang aktif benar-benar file dari ZIP ini. Jika website disajikan lewat Cloudflare Worker custom (bukan GitHub Pages/Cloudflare Pages) yang belum otomatis deploy, update file di sumber Worker yang sedang aktif.
