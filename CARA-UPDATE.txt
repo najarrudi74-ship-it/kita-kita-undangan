@@ -1,33 +1,19 @@
-KITA-KITA UNDANGAN — UPDATE KHUSUS CONTOH ROYAL
-==================================================
+KITA-KITA UNDANGAN — DESAIN BARU (2026-11-08)
 
-ISI ZIP
-- royal.html : halaman Royal yang dibuat berdasarkan video referensi, gambar dan musik sudah tertanam di dalam file.
-- PRATINJAU-ROYAL-SAMPUL.png : pratinjau tampilan sebelum dibuka.
-- PRATINJAU-ROYAL-DALAM.png : pratinjau setelah tombol Buka Undangan.
-- PRATINJAU-MEMPELAI.png : pratinjau bagian Mempelai.
+Isi ZIP ini hanya 7 file HTML yang diperbarui.
+JANGAN unggah file ZIP langsung ke GitHub.
 
-CARA MELIHAT TANPA MENGUBAH WEBSITE
-1. Ekstrak ZIP di laptop atau HP.
-2. Buka file royal.html menggunakan browser (Chrome, Safari, dll).
-3. Klik gambar tombol "Buka Undangan" pada sampul.
-4. Gulir ke bawah. Klik tombol musik untuk menyalakan atau mematikan.
+Cara update:
+1. Download ZIP dan ekstrak.
+2. Buka repo GitHub kita-kita-undangan, cabang main.
+3. Add file > Upload files di folder utama repo.
+4. Pilih 7 file .html, lalu Commit changes.
+5. Tunggu Cloudflare Deployments menjadi Ready; buka link website yang sama.
+6. Jika GitHub error saat upload banyak file, ulangi satu file per upload: mulai index.html.
 
-CARA MENGGANTI CONTOH ROYAL DI WEBSITE
-1. Simpan cadangan royal.html lama dari repo GitHub yang terhubung ke hosting.
-2. Masuk GitHub proyek Kita-Kita Undangan.
-3. Ganti HANYA file royal.html di folder yang sama dengan royal.html lama.
-4. Commit perubahan ke branch yang dipakai deploy.
-5. Jika hosting tersambung otomatis ke GitHub, tunggu build/deploy berhasil. Jika tidak tersambung otomatis, lakukan deploy sesuai konfigurasi hosting yang sekarang.
-6. Buka https://dark-mode-166a.najarrudi74.workers.dev/royal.html lalu refresh jika masih menampilkan versi tersimpan.
+Isi yang dipertahankan: file JS/Firebase, sistem pesanan, Royal Buku, admin, dan gambar/aset lain.
+Hati-hati: desain ini dibuat dari arsip proyek yang tersimpan, bukan dari checkout GitHub live.
+Sebaiknya pastikan file GitHub terbaru belum berisi perubahan baru yang ingin dipertahankan.
 
-PENTING
-- ZIP ini BUKAN perubahan otomatis ke website live. Website live belum diubah.
-- File Basic, Premium, Royal buku, halaman utama, admin dan aturan/data Firebase tidak disentuh.
-- Nama, tanggal, lokasi, hadiah dan pesan tamu di dalam Royal adalah DATA DEMONSTRASI mengikuti contoh video.
-- Nomor pada kartu BNI/DANA adalah angka dummy; bukan rekening pembayaran.
-- Ucapan pengunjung pada halaman contoh disimpan secara lokal pada browser perangkat, tidak dikirim ke Firebase.
-- Tampilan sampul memakai ilustrasi dari tangkapan video referensi. Bagian halaman lainnya direka ulang secara interaktif dan dapat berbeda dari video pada beberapa rincian.
-- Font dekoratif memakai Google Fonts ketika tersedia. Jika tidak tersedia, browser akan menggunakan font pengganti.
-
-Hanya unggah royal.html, tidak perlu menggunggah file screenshot.
+Pemilik: NAZARUDDIN; WhatsApp: +60 14-580 2336.
+Tema: Basic Sage Atelier, Premium Blush Garden, Royal Midnight Gilt.
