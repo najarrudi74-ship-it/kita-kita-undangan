@@ -1,0 +1,27 @@
+UPDATE KHUSUS ROYAL CONTOH 1 - KITA-KITA UNDANGAN
+
+File yang diubah:
+1. royal.html  (menggantikan file royal.html yang lama)
+2. musik-royal-elegan.mp3  (file BARU, simpan di lokasi yang sama dengan royal.html)
+
+CARA UPDATE MELALUI GITHUB:
+1. Buka repository website Kita-Kita Undangan yang terhubung ke Cloudflare.
+2. Masuk ke folder utama tempat index.html, royal.html, dan royal-buku.html berada.
+3. Ganti isi royal.html dengan file royal.html dari ZIP ini (atau upload menggantikan file lama).
+4. Upload musik-royal-elegan.mp3 ke folder yang SAMA.
+5. Commit changes, lalu tunggu deployment otomatis GitHub -> Cloudflare bila integrasinya sudah aktif.
+6. Buka website -> paket Royal -> Contoh 1 • Scroll. Refresh jika halaman versi lama masih tersimpan di cache.
+
+JANGAN timpa seluruh website dengan ZIP lama. Jangan hapus/ubah:
+- index.html
+- basic.html
+- premium.html
+- royal-buku.html (Contoh 2)
+- admin, Firebase, konfigurasi, dan pesanan
+
+Nama contoh: Arga & Sekar.
+Desain: Royal Botanical, sage green + ivory + antique gold, tanpa gambar orang.
+Audio: musik pilihan pengguna (diekstrak dari video yang diberikan), dimulai setelah klik Buka Undangan.
+Animasi: tulisan mengambang lembut mengikuti energi suara pada perangkat yang mendukung Web Audio API.
+
+PENTING: ZIP hanya menyiapkan file pembaruan, BELUM otomatis mengubah website yang online.
