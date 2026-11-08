@@ -1,14 +1,1 @@
-PERBAIKAN GAMBAR HILANG — CONTOH ROYAL 1
-
-File ini tidak membutuhkan folder assets atau file MP3 terpisah, karena gambar dan musik sudah tertanam langsung di royal.html.
-
-1. Masuk GitHub repo Kita-Kita Undangan.
-2. Buka royal.html pada folder yang sama seperti sebelumnya.
-3. GANTI SELURUH ISI royal.html dengan isi file royal.html ini, lalu Commit changes. (Bila GitHub menyediakan Upload files, boleh mengganti dengan cara itu.)
-4. Tunggu deployment Cloudflare yang terhubung GitHub selesai.
-5. Buka halaman Royal Contoh 1, refresh paksa Ctrl+F5 di laptop, atau tutup-buka tab di HP.
-
-PENTING: Tidak perlu menghapus folder assets lama. Jangan mengubah index.html, admin, Basic, Premium, royal buku, atau Firebase.
-Tidak perlu mengunggah musik-royal.mp3 atau folder assets untuk versi Royal 1 ini.
-
-JIKA MASIH GELAP: pastikan halaman royal.html yang aktif benar-benar file dari ZIP ini. Jika website disajikan lewat Cloudflare Worker custom (bukan GitHub Pages/Cloudflare Pages) yang belum otomatis deploy, update file di sumber Worker yang sedang aktif.
+Ganti royal.html lama di GitHub dengan yang ini, lalu Commit changes. Semua gambar dan musik sudah tertanam di satu file royal.html. Khusus Royal Contoh 1; tidak mengubah Basic, Premium, Royal Contoh 2, admin, atau Firebase.
