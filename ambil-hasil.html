@@ -17,6 +17,15 @@ button,.btn,a.btn,[type=submit]{background:linear-gradient(115deg,#f0d49c,#c59a5
 #result{line-height:1.75}#result a{overflow-wrap:anywhere}#result img{max-width:100%;height:auto;border-radius:12px}
 @media(max-width:680px){body{padding:0!important}header{padding:26px 18px 10px!important}main:not(.shell),main.panel,.panel{margin:14px 12px 32px!important;padding:23px 18px!important;border-radius:19px!important}.shell{margin:20px 12px!important}.step,.giftbox,.royal-options{padding:16px!important}button,.btn{min-height:46px}h1{font-size:clamp(29px,8vw,39px)!important}}
 @media(prefers-reduced-motion:reduce){button,.btn{transition:none!important}}
+</style><style id="kk-silver-ornament">
+body:before{display:none!important}
+body:after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.25;background-image:repeating-radial-gradient(ellipse at 0 0,transparent 0 23px,rgba(218,225,238,.6) 24px 26px,transparent 27px 55px);background-size:220px 220px}
+.panel{position:relative!important;isolation:isolate;overflow:hidden;background:linear-gradient(145deg,rgba(28,44,63,.90),rgba(9,22,39,.94))!important;backdrop-filter:blur(8px)}
+.panel:before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.24;background-image:repeating-radial-gradient(ellipse at 0 0,transparent 0 23px,rgba(218,225,238,.65) 24px 26px,transparent 27px 55px);background-size:220px 220px}
+.panel:after{content:"";position:absolute;inset:-100% -90%;z-index:0;pointer-events:none;background:linear-gradient(110deg,transparent 44%,rgba(255,255,255,.025) 47%,rgba(246,250,255,.2) 50%,rgba(255,255,255,.025) 53%,transparent 56%);animation:kk-sheen 9s ease-in-out infinite}
+.panel>*{position:relative;z-index:1}
+@keyframes kk-sheen{0%,15%{transform:translateX(-60%) rotate(-8deg)}65%,100%{transform:translateX(60%) rotate(-8deg)}}
+@media(prefers-reduced-motion:reduce){.panel:after{display:none}}
 </style></head><body><main class="panel"><div style="text-align:center;font-size:36px">🎁</div><h1>Ambil Hasil Pesanan</h1><p>Masukkan kode rahasia yang diberikan setelah pesanan selesai.</p><form id="lookup"><label>Kode pesanan<input id="code" required autocomplete="off" placeholder="KK-..." maxlength="60"></label><button>Lihat Hasil Pesanan ✨</button></form><div id="result" role="status" class="notice hidden"></div><p><small>Jaga kode ini agar tidak diketahui orang lain. Link dari layanan penyimpanan eksternal mungkin memiliki pengaturan akses tersendiri.</small></p><a href="index.html">← Kembali ke Beranda</a></main><script type="module">
 import {initializeApp} from 'https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js';
 import {getFirestore,doc,getDoc} from 'https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js';
