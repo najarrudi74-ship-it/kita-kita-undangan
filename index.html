@@ -122,11 +122,12 @@
 /* Warna asli sebelum perubahan: abu arang kehijauan */
 .takeaway-inner{background:linear-gradient(105deg,#272d30,#46514f)!important}
 </style><style id="kk-original-photo-right-side">
-/* Foto asli motif-perak.jpg, hanya di kanan belakang tombol; warna dasar asli dipertahankan */
-.takeaway-inner{background:linear-gradient(105deg,#272d30,#46514f)!important}
-.takeaway-inner::before{content:""!important;position:absolute!important;inset:0 0 0 50%!important;background-image:url("motif-perak.jpg")!important;background-repeat:repeat!important;background-position:right center!important;background-size:420px auto!important;opacity:.62!important;filter:none!important;mask-image:linear-gradient(to right,transparent 0%,rgba(0,0,0,.55) 28%,#000 75%)!important;-webkit-mask-image:linear-gradient(to right,transparent 0%,rgba(0,0,0,.55) 28%,#000 75%)!important}
-.takeaway-inner .btn-light{position:relative!important;z-index:3!important}
-@media(max-width:640px){.takeaway-inner::before{inset:35% 0 0 30%!important;background-size:300px auto!important;opacity:.46!important}}
+/* Motif asli yang benar-benar tersimpan di GitHub: tile 130x83px. */
+.takeaway-inner{background:linear-gradient(105deg,#272d30,#46514f)!important;isolation:isolate!important}
+.takeaway-inner::before{content:""!important;display:block!important;position:absolute!important;inset:0 0 0 44%!important;z-index:0!important;pointer-events:none!important;background-image:url("./motif-perak.jpg?v=20261109b")!important;background-repeat:repeat!important;background-position:right center!important;background-size:130px 83px!important;opacity:.9!important;filter:brightness(1.45) contrast(1.12)!important;mask-image:linear-gradient(to right,transparent 0%,rgba(0,0,0,.8) 20%,#000 60%)!important;-webkit-mask-image:linear-gradient(to right,transparent 0%,rgba(0,0,0,.8) 20%,#000 60%)!important}
+.takeaway-inner>*{position:relative!important;z-index:2!important}
+.takeaway-inner .btn-light{z-index:5!important}
+@media(max-width:760px){.takeaway-inner::before{inset:42% 0 0 0!important;background-size:130px 83px!important;opacity:.94!important;mask-image:linear-gradient(to bottom,transparent,#000 35%)!important;-webkit-mask-image:linear-gradient(to bottom,transparent,#000 35%)!important}}
 </style></head>
 <body>
 <nav aria-label="Navigasi utama" class="site-nav"><div class="container nav-inner">
