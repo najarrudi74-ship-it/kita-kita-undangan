@@ -1,0 +1,15 @@
+UPDATE KITA-KITA UNDANGAN — BASIC, PREMIUM, ROYAL + GEMBOK ADMIN
+
+1. Ekstrak ZIP ini. Jangan upload ZIP mentah ke GitHub.
+2. Buka repositori GitHub yang sudah menghubungkan website utama.
+3. Unggah hanya 4 file: index.html, basic.html, premium.html, royal.html ke folder UTAMA repositori.
+4. Commit changes ke branch utama yang terhubung ke Cloudflare.
+5. Cek Deployments di Cloudflare sampai status Ready; lalu refresh website.
+
+Gembok admin ada di sisi kanan header (di samping menu HP), menuju admin-hasil.html.
+Tombol WhatsApp dan semua file database/formulir tidak diubah.
+Musik premium dan royal menggunakan musik-premium.mp3 dan musik-royal.mp3 yang sudah ada.
+Contoh halaman berisi nama dan tanggal ilustrasi, bukan acara asli.
+
+Jika GitHub gagal unggah banyak file, lakukan satu file per upload/commit.
+JANGAN hapus file lain dari repositori.
