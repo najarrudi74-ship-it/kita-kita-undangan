@@ -121,6 +121,12 @@
 </style><style id="kk-restore-original-takeaway-color">
 /* Warna asli sebelum perubahan: abu arang kehijauan */
 .takeaway-inner{background:linear-gradient(105deg,#272d30,#46514f)!important}
+</style><style id="kk-original-photo-right-side">
+/* Foto asli motif-perak.jpg, hanya di kanan belakang tombol; warna dasar asli dipertahankan */
+.takeaway-inner{background:linear-gradient(105deg,#272d30,#46514f)!important}
+.takeaway-inner::before{content:""!important;position:absolute!important;inset:0 0 0 50%!important;background-image:url("motif-perak.jpg")!important;background-repeat:repeat!important;background-position:right center!important;background-size:420px auto!important;opacity:.62!important;filter:none!important;mask-image:linear-gradient(to right,transparent 0%,rgba(0,0,0,.55) 28%,#000 75%)!important;-webkit-mask-image:linear-gradient(to right,transparent 0%,rgba(0,0,0,.55) 28%,#000 75%)!important}
+.takeaway-inner .btn-light{position:relative!important;z-index:3!important}
+@media(max-width:640px){.takeaway-inner::before{inset:35% 0 0 30%!important;background-size:300px auto!important;opacity:.46!important}}
 </style></head>
 <body>
 <nav aria-label="Navigasi utama" class="site-nav"><div class="container nav-inner">
