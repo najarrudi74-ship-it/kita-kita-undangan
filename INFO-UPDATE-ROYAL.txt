@@ -1,0 +1,8 @@
+MAIN + ROYAL JAWA ISTANA V3
+
+Ini paket website lengkap dari file MAIN sebelumnya, dengan Royal Contoh 1 diperbarui.
+Royal Contoh 1: royal.html, royal-cover.png, musik-royal.mp3.
+Basic, Premium, Royal Contoh 2, admin, Firebase dan file lain dipertahankan.
+Untuk GitHub: unggah file dari dalam ZIP ke root repository (jangan folder pembungkus).
+Jangan hapus file konfigurasi/rahasia yang sudah diatur di hosting. Simpan salinan sebelum update.
+Website live tidak berubah sampai update di-commit dan deploy berhasil.
