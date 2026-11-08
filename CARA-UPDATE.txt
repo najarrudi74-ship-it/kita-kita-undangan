@@ -1,0 +1,19 @@
+KITA-KITA UNDANGAN — DESAIN BARU (2026-11-08)
+
+Isi ZIP ini hanya 7 file HTML yang diperbarui.
+JANGAN unggah file ZIP langsung ke GitHub.
+
+Cara update:
+1. Download ZIP dan ekstrak.
+2. Buka repo GitHub kita-kita-undangan, cabang main.
+3. Add file > Upload files di folder utama repo.
+4. Pilih 7 file .html, lalu Commit changes.
+5. Tunggu Cloudflare Deployments menjadi Ready; buka link website yang sama.
+6. Jika GitHub error saat upload banyak file, ulangi satu file per upload: mulai index.html.
+
+Isi yang dipertahankan: file JS/Firebase, sistem pesanan, Royal Buku, admin, dan gambar/aset lain.
+Hati-hati: desain ini dibuat dari arsip proyek yang tersimpan, bukan dari checkout GitHub live.
+Sebaiknya pastikan file GitHub terbaru belum berisi perubahan baru yang ingin dipertahankan.
+
+Pemilik: NAZARUDDIN; WhatsApp: +60 14-580 2336.
+Tema: Basic Sage Atelier, Premium Blush Garden, Royal Midnight Gilt.
