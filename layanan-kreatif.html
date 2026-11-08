@@ -35,7 +35,7 @@ f.addEventListener('submit',async e=>{
    '━━━━━━━━━━━━━━━━━━━━',
    '💗 *Terima kasih!*'
   ].join('\n');
-  const kartu=new URL('kartu-pesanan.html',location.href);kartu.searchParams.set('ref',id);kartu.searchParams.set('paket',get('paket'));const pesanLengkap=msg+'\n\n🌈 *KARTU PESANAN DIGITAL RGB* ✨\n🔗 '+kartu.href+'\n_Buka link untuk melihat kartu animasi berwarna._';location.href='https://wa.me/6283181882971?text='+encodeURIComponent(pesanLengkap);
+  const kartu=new URL('kartu-pesanan.html',location.href);kartu.searchParams.set('ref',id);kartu.searchParams.set('paket',get('paket'));const pesanLengkap=msg+'\n\n🌈 *KARTU PESANAN DIGITAL RGB* ✨\n🔗 '+kartu.href+'\n_Buka link untuk melihat kartu animasi berwarna._';location.href='https://wa.me/60145802336?text='+encodeURIComponent(pesanLengkap);
  }catch(err){alert('Pesanan belum tersimpan ke database. Periksa internet atau aturan Firebase. '+err.message);}
  finally{saving=false;submit.disabled=false;submit.textContent='Pesan via WhatsApp ✦';}
 });
