@@ -1,0 +1,1 @@
+Ganti royal.html lama di GitHub dengan royal.html ini. Setelah Buka Undangan, halaman sampul hilang dan isi surat langsung tampil. Hanya kertas undangan yang bisa digulir; tema di belakang tetap diam. Gambar dan musik sudah tertanam dalam satu file.
