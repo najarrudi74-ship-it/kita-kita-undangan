@@ -3,251 +3,335 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#e9ebe4">
-<meta name="description" content="Contoh undangan Royal Jawa Klasik dengan ilustrasi botanikal halus, musik pilihan dan tulisan mengambang mengikuti alunan musik.">
-<title>The Wedding of Arga &amp; Sekar — Royal Botanical</title>
+<meta name="theme-color" content="#1a2b2b">
+<meta name="description" content="Undangan Royal Jawa Klasik dengan musik pengguna, warna elegan baru, dan animasi tulisan mengambang mengikuti alunan musik.">
+<title>Royal Jawa Klasik • Arga &amp; Sekar | Kita-Kita Undangan</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Italianno&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Allura&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Libre+Baskerville:wght@400;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{
-  --sage:#647469; --sage-dark:#405749; --sage-deep:#263d35; --moss:#7f8b77;
-  --bronze:#b69b70; --bronze-dark:#8a704b; --cream:#f7f3e9; --ivory:#fffcf6;
-  --ink:#3b453b; --muted:#70766a; --line:#d8d6c8; --energy:0;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:#d6dcd5;color:var(--ink);font-family:'Cormorant Garamond',Georgia,serif}
-body:not(.opened){overflow:hidden}
-button,input,select,textarea{font:inherit}button{cursor:pointer}
-button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,a:focus-visible{outline:3px solid #ad9468;outline-offset:3px}
-button,a{-webkit-tap-highlight-color:transparent}
-.site{width:min(100%,500px);min-height:100svh;margin:auto;overflow:hidden;position:relative;background:var(--cream);box-shadow:0 12px 65px #2540362a}
-.site[hidden]{display:none!important}
-.signature{font-family:'Manrope',sans-serif;font-weight:600;font-size:10px;letter-spacing:.30em;text-transform:uppercase}
-.smallcaps{font-family:'Manrope',sans-serif;font-size:10px;letter-spacing:.25em;text-transform:uppercase}
-.script{font-family:'Italianno','Cormorant Garamond',serif;font-weight:400}
-.ornament{display:flex;align-items:center;justify-content:center;gap:10px;color:var(--bronze-dark);font-size:23px;line-height:1;margin:14px auto}
-.ornament:before,.ornament:after{content:"";height:1px;width:54px;background:linear-gradient(90deg,transparent,var(--bronze))}.ornament:after{transform:scaleX(-1)}
-.botanical{position:absolute;pointer-events:none;color:var(--sage);opacity:.60;filter:drop-shadow(0 3px 2px #fff6)}
-.botanical svg{width:100%;height:100%;overflow:visible}
-.botanical.top-left{width:165px;height:220px;left:-42px;top:-22px;transform:rotate(-21deg)}
-.botanical.top-right{width:154px;height:214px;right:-44px;top:8px;transform:scaleX(-1) rotate(-18deg)}
-.botanical.bottom-left{width:155px;height:210px;left:-47px;bottom:-28px;transform:rotate(167deg)}
-.botanical.bottom-right{width:168px;height:215px;right:-51px;bottom:-18px;transform:scaleX(-1) rotate(157deg)}
-.botanical.b1{color:#748a78}.botanical.b2{color:#b49a78;opacity:.45}
-/* Intro / cover: a new illustrated botanical arch, not a cropped video screenshot. */
-.cover{position:fixed;inset:0;z-index:100;background:#d7dcd4;display:flex;justify-content:center;transition:opacity 1.1s ease,visibility 1.1s,transform 1.2s ease;isolation:isolate}
-.cover-shell{width:min(100%,500px);height:100%;min-height:100svh;overflow:hidden;position:relative;background:radial-gradient(ellipse at 45% 38%,#fffefa 0%,#f7f4ed 43%,#e8eadd 100%);display:grid;place-items:center;box-shadow:0 0 60px #23403333}
-.cover-shell:before,.cover-shell:after{content:"";position:absolute;inset:15px;border:1px solid #b49c7480;pointer-events:none}
-.cover-shell:after{inset:22px;border-color:#d4c9ad96}
-.cover-main{position:relative;z-index:3;width:calc(100% - 60px);min-height:calc(100% - 108px);max-height:740px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:45px 15px 37px}
-.royal-arch{border:1px solid #b6a482;border-radius:48% 48% 14px 14px / 23% 23% 14px 14px;position:absolute;inset:3% 1% 2%;pointer-events:none;box-shadow:0 0 0 7px #faf8f167,0 0 0 8px #c7baa168,inset 0 0 35px #bcc7b31a}
-.royal-arch:before{content:"";position:absolute;inset:10px;border:1px solid #d9c6a5;border-radius:48% 48% 8px 8px / 23% 23% 8px 8px}
-.cover-symbol{font-family:'Cormorant Garamond',serif;font-size:31px;color:var(--bronze-dark);letter-spacing:-.18em;margin:3px 12px 20px 0}
-.cover-kicker{color:var(--sage-dark);margin:0 0 8px}
-.cover-title{font-size:clamp(27px,6vw,35px);font-weight:400;color:#516456;margin:0;letter-spacing:.05em}
-.cover-name{font-size:clamp(73px,18vw,112px);line-height:.93;color:#546b5b;margin:15px 0 5px;padding:4px 2px;text-shadow:0 3px 0 #ffffffa0}
-.cover-date{font:500 11px 'Manrope',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#6b7166;margin-top:13px}
-.invite-recipient{color:#797b6e;font:500 11px/1.65 'Manrope',sans-serif;margin:28px 0 20px}
-.open-button{border:1px solid #677f6e;color:#f9f8ee;border-radius:999px;background:linear-gradient(120deg,#4c6858,#78907b);font:600 11px 'Manrope',sans-serif;letter-spacing:.08em;padding:15px 28px;position:relative;overflow:hidden;min-height:44px;box-shadow:0 8px 21px #53655633}
-.open-button:before{content:"";position:absolute;inset:0 auto 0 0;width:25%;transform:skewX(-24deg) translateX(-180%);background:linear-gradient(90deg,transparent,#fff7,transparent);animation:shine 4s ease-in-out infinite}
-@keyframes shine{0%,45%{transform:skewX(-24deg) translateX(-180%)}80%,100%{transform:skewX(-24deg) translateX(550%)}}
-.cover-footer{position:absolute;bottom:35px;left:0;right:0;text-align:center;z-index:2;color:#979988;font:9px 'Manrope',sans-serif;letter-spacing:.15em}
-.opened .cover{opacity:0;visibility:hidden;transform:scale(1.02);pointer-events:none}
-/* all sections preserve original ordering */
-.hero{height:100svh;min-height:600px;position:relative;overflow:hidden;background:radial-gradient(ellipse at 52% 45%,#fffdf9 0%,#f4f2e9 52%,#dae4d7 100%);display:flex;align-items:center;justify-content:center;text-align:center;padding:45px 28px}
-.hero:before{content:"";position:absolute;inset:22px;border:1px solid #b1a07f;border-radius:49% 49% 6px 6px / 25% 25% 6px 6px;box-shadow:0 0 0 8px #ffffff55;pointer-events:none}
-.hero-inner{position:relative;z-index:2;max-width:390px}
-.hero h1{font:400 clamp(86px,20vw,123px)/.88 'Italianno',serif;color:#516b59;margin:15px 0 21px}
-.hero p{margin:0;color:#7a7969;font-size:18px}
-.hero .dates{font:600 11px 'Manrope',sans-serif;letter-spacing:.21em;color:#566d5c}
-.scroll-hint{position:absolute;bottom:36px;left:0;right:0;text-align:center;color:#667766;font:600 10px 'Manrope',sans-serif;letter-spacing:.18em;animation:bounce 2.7s ease-in-out infinite}
-.scroll-hint span{display:block;font-size:25px;margin-top:2px}
-@keyframes bounce{50%{transform:translateY(-8px)}}
-.floating-petal{position:absolute;width:10px;height:17px;border:1px solid #bda87b66;background:#dbe0d2a1;border-radius:80% 10% 80% 10%;z-index:1;pointer-events:none;animation:petalMove 8s ease-in-out infinite}
-.petal-a{left:13%;top:33%;transform:rotate(35deg)}.petal-b{right:15%;top:40%;animation-delay:-3s;transform:rotate(-35deg)}.petal-c{left:21%;bottom:18%;animation-delay:-5s;transform:rotate(-25deg)}
-@keyframes petalMove{0%,100%{translate:0 0;opacity:.35}50%{translate:8px -19px;opacity:.85}}
-.section{position:relative;padding:83px 24px;isolation:isolate;overflow:hidden}
-.section.paper{background:linear-gradient(180deg,#f7f4ec,#fffcf5 47%,#f4f2e9)}
-.section.sage{background:linear-gradient(155deg,#526b5c,#354f43 72%);color:#fff8ec}
-.section.soft{background:#e9ede4}
-.inner-frame{position:relative;z-index:1;margin:0 auto;max-width:425px;border:1px solid #cfc2a7;border-radius:160px 160px 18px 18px / 100px 100px 18px 18px;background:#fffdf8b8;text-align:center;padding:73px 29px 63px;box-shadow:0 12px 30px #4b534718,inset 0 0 0 8px #fffcf3b0}
-.inner-frame:before{content:"";position:absolute;inset:12px;border:1px solid #d9cfba;border-radius:150px 150px 11px 11px / 95px 95px 11px 11px;pointer-events:none}
-.section-heading{font-size:clamp(36px,9vw,51px);line-height:1.02;font-weight:500;margin:7px 0 19px;color:#526857}
-.section-heading.light{color:#fbf4e3}
-.body-copy{font-size:19px;line-height:1.6;margin:0 auto 14px;max-width:320px}
-.mono-label{font:600 10px/1.6 'Manrope',sans-serif;letter-spacing:.26em;text-transform:uppercase;color:#8d7655}
-.person-names{font:400 clamp(60px,13vw,84px)/1 'Italianno',serif;color:#5e755f;margin:16px 0 12px}
-.blessing{font-size:18px;line-height:1.5;color:#777f70;margin:12px 0 0}
-.lyric-box{margin:32px auto 24px;display:flex;flex-direction:column;align-items:center;gap:9px;max-width:290px}
-.lyric-line{width:100%;border:1px solid #d9d5c8;border-radius:999px;padding:10px 13px;background:#fffdf6b7;color:#7a8779;font:600 10px/1.5 'Manrope',sans-serif;letter-spacing:.14em;text-transform:uppercase;opacity:.50;transition:background .4s,color .4s,opacity .4s,box-shadow .4s;animation:gentleDrift 5s ease-in-out infinite;transform:translateY(calc(var(--energy) * -5px))}
-.lyric-line:nth-child(2){animation-delay:-.8s}.lyric-line:nth-child(3){animation-delay:-1.6s}.lyric-line:nth-child(4){animation-delay:-2.4s}.lyric-line:nth-child(5){animation-delay:-3.2s}
-.lyric-line.active{background:linear-gradient(120deg,#647e69,#8f9d7f);color:#fffdf4;border-color:#819c83;opacity:1;box-shadow:0 6px 20px #53665b38}
-.lyric-line.past{opacity:.7}
-@keyframes gentleDrift{0%,100%{translate:0 0}50%{translate:0 -8px}}
-.music-replay{background:none;border:1px solid #879a89;border-radius:99px;padding:9px 17px;color:#4d6656;font:600 10px 'Manrope',sans-serif;min-height:40px}
-.time-intro{text-align:center;max-width:355px;margin:0 auto 23px;color:#f2eddd}
-.time-intro p{font-size:23px;line-height:1.45;margin:8px auto}
-.countdown{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;max-width:410px;margin:24px auto 0}
-.countbox{background:#ffffff13;border:1px solid #dfd1b166;border-radius:13px;padding:15px 3px 12px;text-align:center}
-.countbox strong{display:block;font-size:32px;font-weight:500;font-variant-numeric:tabular-nums;color:#fff7e7;line-height:1}
-.countbox span{font:600 9px 'Manrope',sans-serif;letter-spacing:.06em;color:#f2e2c9}
-.event-card{position:relative;border-radius:160px 160px 20px 20px / 105px 105px 20px 20px;max-width:400px;margin:auto;text-align:center;padding:78px 28px 58px;background:#fbf9f0;box-shadow:0 15px 45px #14251e18;border:1px solid #cbbd9f;overflow:hidden}
-.event-card:before{content:"";position:absolute;inset:12px;border:1px solid #d5caaf;border-radius:155px 155px 14px 14px / 102px 102px 14px 14px;pointer-events:none}
-.event-card .smallcaps{color:#988260}.event-card h2{font:400 77px/1.03 'Italianno',serif;color:#4d6959;margin:4px 0 12px}
-.event-icon{font-size:23px;color:#b39e77;margin:10px 0 12px}
-.event-date{font-size:23px;color:#435c4d;margin:7px auto}.event-hour{color:#6a765f;font-size:20px;margin:0 0 22px}
-.event-location{font-size:18px;line-height:1.45;color:#697263;margin:5px auto 20px}
-.event-action{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid #a7aa8c;border-radius:50px;padding:12px 23px;color:#506a59;text-decoration:none;font:600 11px 'Manrope',sans-serif;min-height:44px}
-.story-copy{text-align:center;margin:0 auto;max-width:360px}.story-list{margin-top:45px;display:grid;gap:22px}.story-item{position:relative;padding:0 8px}.story-item h3{font-size:27px;margin:5px 0 9px;font-weight:600;color:#5a6e5d}.story-item p{font-size:18px;line-height:1.55;color:#6a756b;margin:0}.story-connector{width:1px;height:40px;background:linear-gradient(transparent,#bca376,transparent);margin:0 auto}.gift-note{font-size:19px;line-height:1.55;max-width:320px;margin:0 auto 24px;color:#e9eadc}
-.gift-box{background:#fff9eedf;border:1px solid #d5c3a1;color:#535e50;border-radius:20px;max-width:370px;margin:16px auto;padding:23px 16px;text-align:center;box-shadow:0 10px 30px #09241d17}.gift-box h3{font:600 12px 'Manrope',sans-serif;letter-spacing:.24em;margin:0 0 10px;color:#826d4e}.gift-box p{font-size:17px;margin:4px 0}.gift-box small{font:500 11px 'Manrope',sans-serif;color:#8d907f}
-.wishes-wrap{position:relative;max-width:420px;margin:auto;background:#fffcf6;border:1px solid #d9c8af;border-radius:30px;padding:42px 23px;box-shadow:0 15px 35px #42513e16;text-align:center}
-.wishes-wrap h2{margin:0 0 10px}.wishes-wrap p{font-size:17px;color:#768274}
-.wish-form{display:grid;gap:12px;text-align:left;margin:24px 0 20px}.wish-form label{font:600 11px 'Manrope',sans-serif;color:#687568}.wish-form input,.wish-form textarea,.wish-form select{width:100%;padding:13px 14px;border:1px solid #d2d8cc;background:#fff;border-radius:12px;font:400 13px 'Manrope',sans-serif;color:#374b3e;outline-color:#b6a078}.wish-form textarea{min-height:104px;resize:vertical}.wish-submit{border:0;border-radius:100px;min-height:45px;color:#fffdf3;background:linear-gradient(110deg,#486551,#829681);font:600 12px 'Manrope',sans-serif}
-#wishFeedback{font:500 11px 'Manrope',sans-serif;color:#536f5b;min-height:14px;text-align:center}
-.comments{max-height:305px;overflow:auto;margin-top:22px;text-align:left}.comment{padding:13px 0;border-top:1px solid #e7e4d9;font:400 13px/1.6 'Manrope',sans-serif;overflow-wrap:anywhere}.comment strong{color:#44624e}.comment time{display:block;color:#9c9f92;font-size:10px;margin-top:5px}.demo-label{font:500 10px 'Manrope',sans-serif;color:#90998c}
-.footer{min-height:560px;background:linear-gradient(160deg,#2b4838,#1c3028);color:#f6f0df;text-align:center;position:relative;display:flex;align-items:center;justify-content:center;padding:95px 45px;overflow:hidden}.footer .footer-inner{z-index:1;position:relative}.footer h2{font:400 84px/.9 'Italianno',serif;margin:20px 0;color:#efead6}.footer p{font-size:19px;line-height:1.6}.footer small{font:500 10px/1.7 'Manrope',sans-serif;letter-spacing:.10em;color:#e0dfc7}
-.music-toggle{position:fixed;z-index:88;right:max(13px,calc((100vw - 500px)/2 + 12px));bottom:calc(18px + env(safe-area-inset-bottom));width:47px;height:47px;border:1px solid #e6d6b6;border-radius:100px;color:#fff9e5;background:#3c5845;box-shadow:0 5px 22px #152b2199;display:none;align-items:center;justify-content:center;font-size:20px;transition:transform .2s}
-.opened .music-toggle{display:flex}.music-toggle.playing{animation:slowTurn 10s linear infinite}
-@keyframes slowTurn{to{rotate:360deg}}
-.music-toggle .mute-icon{display:none}.music-toggle[aria-pressed="false"] .mute-icon{display:block}.music-toggle[aria-pressed="false"] .on-icon{display:none}
-.reveal{opacity:0;transform:translateY(28px);transition:opacity 900ms ease,transform 900ms cubic-bezier(.18,.78,.24,1)}.reveal.visible{opacity:1;transform:none}
-.floataudio{will-change:translate,transform,filter;transition:transform 120ms linear,filter 120ms linear;transform:translateY(calc(var(--energy) * -10px)) scale(calc(1 + var(--energy) * .028));filter:drop-shadow(0 2px calc(1px + var(--energy) * 14px) #9a85585a);animation:gentleDrift 5.6s ease-in-out infinite}
+:root{--forest:#667461;--moss:#788270;--taupe:#a18264;--brown:#a88a69;--deep:#6e5e4d;--cream:#eee9df;--paper:#eeeae3;--ink:#4d4539;--border:#94765b;--art-cover:url('assets/cover.jpg');--art-inner:url('assets/inner.jpg');--art-walls:url('assets/walls.jpg');--art-paper:url('assets/paper.jpg');--art-garden:url('assets/garden.jpg');--art-flowers:url('assets/flowers.jpg')}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#c8c0ae;color:var(--ink);font-family:'Cormorant Garamond',Georgia,serif}button,input,select,textarea{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--forest);outline-offset:3px}button,a{-webkit-tap-highlight-color:transparent}
+body:not(.opened){overflow:hidden}body.opened{overflow:auto}.site{max-width:512px;margin:auto;position:relative;min-height:100dvh;overflow:hidden;background-color:#e8e3d8;background-image:var(--art-walls);background-size:100% 980px;box-shadow:0 8px 80px #33291c44}.site[hidden]{display:none}
+/* The cover is the exact illustration layout captured from the user's example video. */
+.cover{position:fixed;z-index:100;inset:0;display:flex;align-items:stretch;justify-content:center;background:#b8ae9e;transition:opacity 1s ease,transform 1.2s cubic-bezier(.23,.72,.38,1),visibility 1.15s}
+.cover-inner{height:100%;width:min(100%,512px);position:relative;isolation:isolate;background:var(--art-cover) center/100% 100% no-repeat;box-shadow:0 0 70px #35302433}
+.cover:after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 50% 40%,transparent 55%,#594f3a0d)}
+.cover-open{position:absolute;top:65%;left:26.5%;width:47%;height:5.7%;border:0;border-radius:99px;background:transparent;z-index:1;overflow:hidden;color:transparent}
+.cover-open:after{content:"";position:absolute;inset:0;width:25%;background:linear-gradient(90deg,transparent,#fff7 50%,transparent);transform:translateX(-280%) skewX(-20deg);animation:cover-shine 3.8s ease-in-out infinite}
+@keyframes cover-shine{0%,48%{transform:translateX(-280%) skewX(-20deg)}78%,100%{transform:translateX(660%) skewX(-20deg)}}
+.opened .cover{opacity:0;transform:scale(1.055);visibility:hidden;pointer-events:none}
+.opening-flash{position:fixed;z-index:98;inset:0;background:#fff5de;opacity:0;pointer-events:none}.opened .opening-flash{animation:flash .95s ease-out}@keyframes flash{20%{opacity:.45}100%{opacity:0}}
+.hero{min-height:100svh;height:100dvh;position:relative;background:var(--art-inner) center/100% 100% no-repeat;overflow:hidden;opacity:0;transform:scale(1.035);transition:transform 1.5s cubic-bezier(.19,.8,.3,1),opacity 1s}.opened .hero{opacity:1;transform:scale(1)}
+.scroll-cue{position:absolute;bottom:1.8%;left:50%;transform:translateX(-50%);color:#f4eee3;text-shadow:0 2px 4px #312c26b0;letter-spacing:1.8px;font:500 10px/1.5 'DM Sans',sans-serif;text-align:center;animation:arrow 1.8s ease-in-out infinite}.scroll-cue span{display:block;font-size:22px}@keyframes arrow{0%,100%{transform:translate(-50%,0);opacity:.75}50%{transform:translate(-50%,8px);opacity:1}}
+.butterfly{position:absolute;z-index:2;width:32px;height:20px;pointer-events:none;filter:drop-shadow(1px 2px 1px #322b1844);animation:bfloat 4.8s ease-in-out infinite}.butterfly:before,.butterfly:after{content:"";position:absolute;top:4px;width:14px;height:12px;background:linear-gradient(125deg,#272a21 0%,#a78348 25%,#d8bd6b 53%,#212a1a 58%,#262822 100%);border:1.2px solid #181c13}.butterfly:before{right:50%;border-radius:85% 38% 76% 24%;transform-origin:right center;animation:wing-l 1.4s ease-in-out infinite}.butterfly:after{left:50%;border-radius:38% 85% 24% 76%;transform-origin:left center;animation:wing-r 1.4s ease-in-out infinite}@keyframes wing-l{50%{transform:scaleX(.55) rotate(-10deg)}}@keyframes wing-r{50%{transform:scaleX(.55) rotate(10deg)}}@keyframes bfloat{50%{translate:3px -12px;rotate:6deg}}
+.hero .butterfly.a{left:17%;bottom:12%;scale:.85}.hero .butterfly.b{right:15%;bottom:13%;scale:.67;animation-delay:1s}
+.garden-divider{height:185px;background:var(--art-garden) center/100% 100% no-repeat;position:relative}.garden-divider::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#ebe7dd30,transparent 45%,#ece6da38)}
+.content{background:var(--art-walls) center top/100% auto repeat-y;padding:24px 15px 35px;position:relative}.content:before{content:"";position:absolute;inset:0;pointer-events:none;background:#ddd2bc0d}
+.reveal{opacity:0;transform:translateY(38px) scale(.974);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.26,1)}.reveal.shown{opacity:1;transform:none}
+.paper-card{position:relative;isolation:isolate;overflow:hidden;text-align:center;background:#ecece8 url('assets/paper.jpg') center/cover;border:2.5px solid var(--border);border-radius:12px;box-shadow:inset 0 0 0 4px #f0eee38c,0 2px 7px #59463124}.paper-card:before{content:"";position:absolute;inset:0;background:#f1eee18a;z-index:-1}.paper-card:after{content:"";position:absolute;inset:8px;border:1px solid #baa88c47;border-radius:7px;pointer-events:none}
+.section-title{font-size:clamp(33px,9vw,51px);font-weight:400;line-height:1.08;letter-spacing:-1px;margin:0 0 15px}.subheading{font-size:26px;font-weight:500;margin:0 0 10px}.body-copy{font-size:clamp(15px,4vw,20px);line-height:1.55;letter-spacing:-.1px}.tiny{font-size:14px}.name{font-size:clamp(31px,8.5vw,50px);line-height:1.17;font-weight:400;margin:18px 0}.script{font-family:'Great Vibes','Allura',cursive;font-weight:400}.divider-ornament{width:76px;height:1px;background:#ad9476;margin:20px auto}.instagram{width:35px;height:35px;display:grid;place-items:center;margin:18px auto;border:0;border-radius:50%;background:#85745f;color:white;font:22px Georgia}
+.introduction{padding:56px 30px 62px;min-height:690px;display:flex;flex-direction:column;align-items:center;justify-content:center}.intro-text{margin:8px 0 30px}.intro-names{margin:20px auto}.intro-person{font-size:18px;line-height:1.5;margin-bottom:15px}.intro-person h3{font-size:clamp(31px,8vw,46px);font-weight:400;margin:20px 0 12px}.intro-person p{margin:6px 0}.amp{font:600 clamp(73px,20vw,100px)/.9 Georgia;color:#92795d;margin:25px 0 23px}
+.block-brown{background:#a8896d;color:#f7f0e3;padding:28px 18px;margin:25px -15px 0;position:relative}.block-brown:before{content:"";position:absolute;inset:0;opacity:.14;background:var(--art-paper) center/cover;pointer-events:none}.block-brown>*{position:relative}
+.quote-paper{background:#e9e8e8e8;color:#4a4236;border-radius:7px;text-align:center;padding:30px 19px 27px;font-size:18px;line-height:1.55;position:relative;box-shadow:0 1px 6px #513d3020}.quote-paper p{margin:0}.verse-count{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-top:18px}.time-box{background:#a68869;color:#f8f4ec;border-radius:5px;min-height:56px;display:flex;flex-direction:column;align-items:center;justify-content:center}.time-box strong{font-size:24px;line-height:1.1;font-weight:500}.time-box span{font:10px 'DM Sans',sans-serif;opacity:.91}
+.event-brown{padding:24px 13px}.event-oval{min-height:500px;border-radius:50% / 24%;background:var(--art-paper) center/cover;position:relative;color:#926e4d;padding:83px 17px 69px;text-align:center;overflow:hidden}.event-oval:before{content:"";position:absolute;inset:0;background:#e6e5e0bc}.event-oval>*{position:relative}.heart{font-family:Arial,sans-serif;font-size:50px;line-height:1;color:#a08463;margin:8px auto 20px}.event-oval h2{font-size:clamp(37px,10vw,53px);margin:7px 0 24px}.event-oval .day{font-size:22px;color:#94785a;margin:16px 0 5px}.event-oval .hour{font-size:18px;margin:7px 0 14px}.pin{font-size:37px;color:#ad8a68;margin:4px auto 9px;line-height:1}.location-title{font-size:18px;margin:25px 0 11px}.address{font-size:16px;margin:8px 0 14px}.outline-action{display:inline-block;text-decoration:none;border:1px solid #8b7359;background:#f0e9ddad;border-radius:20px;padding:9px 15px;font-size:15px;color:#6b5e4d}
+.story{padding:65px 26px 75px;min-height:660px}.story-item{margin-top:43px}.story-item h3{font-size:24px;margin:0 0 18px;font-weight:500}.story-item p{font-size:18px;line-height:1.55;margin:0}.story-timeline{height:38px;width:1px;background:#aa9278;margin:15px auto}
+.gift{padding:45px 22px 55px}.gift h2{font-size:clamp(36px,9vw,47px);font-weight:400;margin:0 0 15px}.gift-intro{font-size:17px;line-height:1.5;margin:0 auto 24px;max-width:390px}.bank-card{background:linear-gradient(155deg,#f7f7f5 6%,#d9d9d7 52%,#f3f3f3 90%);border-radius:14px;min-height:165px;text-align:left;padding:19px 18px;margin:18px 0;box-shadow:0 3px 12px #2c231c17;color:#2a2b2b;font:13px 'DM Sans',sans-serif;position:relative;overflow:hidden}.bank-card:before{content:"";position:absolute;width:250px;height:170px;right:-40px;top:-27px;background:#adacaf18;transform:rotate(-30deg)}.bank-brand{text-align:right;font-weight:700;font-size:23px}.bank-chip{width:42px;height:30px;border-radius:5px;border:1px solid #b5a67b;background:linear-gradient(25deg,#bfa86d,#ede2b9,#b9a277)}.bank-name{font-weight:600;margin:10px 0 4px}.bank-number{font-weight:600;color:#5578a2}.copy-action{background:#151515;color:#fff;border:0;border-radius:3px;padding:8px 11px;position:absolute;right:15px;bottom:14px;font:12px 'DM Sans',sans-serif}.bank-sample{font:11px 'DM Sans',sans-serif;color:#655f58;margin-top:8px}
+.wishes{padding:53px 20px 40px;min-height:590px}.wishes h2{font-size:38px;margin:0 0 22px;font-weight:400}.comments-box{background:#f1f0edcf;border:1px solid #c7c2b9;border-radius:8px;color:#2f2c28;text-align:left;font:14px 'DM Sans',sans-serif;padding:15px}.comments-box h3{text-align:center;font-size:16px;margin:3px 0 19px}.wish-form{display:flex;flex-direction:column;gap:12px}.wish-form input,.wish-form textarea,.wish-form select{width:100%;border:1px solid #d7d3cd;border-radius:5px;background:#fffcf4ed;padding:12px;color:#3a3630;font:14px 'DM Sans',sans-serif}.wish-form textarea{min-height:91px;resize:vertical}.wish-form button{align-self:flex-start;background:#111;color:#fff;border:0;padding:11px 19px;border-radius:3px;font:14px 'DM Sans',sans-serif}.comment{border-top:1px solid #c8c3b9;margin-top:17px;padding-top:15px;font-size:13px;line-height:1.6;overflow-wrap:anywhere}.comment strong{font-size:13px}.comment time{color:#87817a;font-size:11px}
+.final{min-height:580px;background:#76644d;color:#e5d9c7;position:relative;display:flex;justify-content:center;align-items:center;text-align:center;padding:55px 36px;overflow:hidden}.final:before{content:"";position:absolute;inset:0;background:var(--art-paper) center/cover;opacity:.1}.final>*{position:relative}.final h2{font-size:48px;font-weight:400;line-height:1.15;margin:25px 0 35px}.final p{font-size:18px;line-height:1.55}.final small{display:block;margin-top:58px;font-size:11px;letter-spacing:2px;text-transform:uppercase;opacity:.74}
+.music-button{position:fixed;z-index:80;right:max(12px,calc((100vw - 512px)/2 + 12px));bottom:22px;width:43px;height:43px;border:2px solid #f5eee5;border-radius:50%;color:#fff;box-shadow:0 3px 11px #0006;background:#222;display:grid;place-items:center;transition:transform .3s;opacity:0;pointer-events:none}.opened .music-button{opacity:1;pointer-events:auto}.music-button:active{transform:scale(.9)}.music-button.playing svg{animation:spin 8s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}.music-button svg{width:22px;height:22px;fill:currentColor}
+.tag{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);z-index:60;background:#eee9decb;border:1px solid #a79e8d66;border-radius:25px;padding:7px 13px;color:#635a4e;font:11px 'DM Sans',sans-serif;box-shadow:0 2px 4px #554d4314;white-space:nowrap;opacity:0;pointer-events:none}.opened .tag{opacity:1}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(min-width:512px){.cover-inner{height:100dvh}.site{box-shadow:0 0 64px #574c3b66}.content{padding-left:20px;padding-right:20px}.block-brown{margin-left:-20px;margin-right:-20px}}
+@media(max-width:360px){.section-title{font-size:32px}.paper-card.introduction{padding:40px 16px}.event-oval{min-height:440px;padding:60px 12px}.event-oval h2{font-size:34px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal,.hero,.cover{transition:none}.cover-open:after,.scroll-cue,.butterfly,.butterfly:before,.butterfly:after{animation:none}}
 
-.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
-@media(max-width:370px){.cover-main{width:calc(100% - 52px)}.cover-name{font-size:74px}.inner-frame{padding:65px 21px}.section{padding:69px 17px}.event-card{padding:76px 20px 60px}.event-card h2{font-size:69px}.hero h1{font-size:86px}.botanical.top-left{left:-62px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.lyric-line,.floataudio,.scroll-hint,.floating-petal,.open-button:before,.music-toggle.playing{animation:none}.reveal{opacity:1;transform:none;transition:none}.cover{transition:none}}
+/* Royal Black Gold: change colors without changing the structure of the video-inspired invitation. */
+:root { --forest:#685332; --moss:#5f5946; --taupe:#ae8b4e; --brown:#9f7a3a; --deep:#33291f; --cream:#f3ead6; --paper:#f5ead6; --ink:#392b20; --border:#b79558; }
+body { background:#191918; color:var(--ink); }
+.site { background-color:#eee1c8; box-shadow:0 8px 80px #070707a6; }
+.cover { background:#1c1b1b; }
+.cover-inner { box-shadow:0 0 68px #050505ac; }
+.cover:after { background:radial-gradient(circle at 50% 39%, transparent 53%, #36261017); }
+.opening-flash { background:#fae8bd; }
+.art-cover-name,.art-cover-date,.art-hero-name,.art-hero-date { position:absolute; left:9%; width:82%; z-index:3; text-align:center; pointer-events:none; color:#6e532d; text-shadow:0 1px 0 #fff5da70; }
+.art-cover-name,.art-hero-name { font-family:'Great Vibes','Allura',cursive; letter-spacing:1px; font-weight:400; }
+.art-cover-name { top:31.6%; font-size:clamp(54px,14vw,73px); line-height:1.25; }
+.art-cover-date { top:41.7%; font-family:'Cormorant Garamond',Georgia,serif; font-size:clamp(17px,4.7vw,22px); font-weight:600; }
+.art-hero-name { top:38.2%; font-size:clamp(76px,20vw,104px); line-height:1.15; }
+.art-hero-date { top:62.2%; font-family:'Cormorant Garamond',Georgia,serif; font-size:clamp(18px,5vw,23px); }
+.cover-open { z-index:5; }
+.butterfly:before,.butterfly:after { background:linear-gradient(125deg,#1a1a1b 0%,#957440 25%,#e3bd62 53%,#161718 58%,#111111 100%); }
+.paper-card { border-color:#b79453; box-shadow:inset 0 0 0 4px #fff4da8a,0 5px 17px #2b1d162e; }
+.paper-card:before { background:#fff2d85f; }
+.paper-card:after { border-color:#bea26957; }
+.block-brown { background:#2b2825; color:#f5ebd7; }
+.block-brown:before { opacity:.2; }
+.quote-paper { background:#f5ead6f0; color:#342b20; }
+.time-box { background:#967443; color:#fff7e8; }
+.event-oval { color:#5f431f; }
+.event-oval:before { background:#f4e7ccc4; }
+.event-oval .day,.event-oval .heart,.event-oval .pin { color:#9d773e; }
+.outline-action { color:#674819; border-color:#ad884c; background:#f5e5c2e3; }
+.instagram { background:#8e6d3b; }
+.bank-card { background:linear-gradient(135deg,#faf3e6,#dfd1b5 52%,#f4e9d8); }
+.bank-number { color:#70532c; }
+.copy-action,.wish-form button { background:#292522; color:#f7e9c9; }
+.comments-box { background:#fbf4e7ee; }
+.comments-box input,.comments-box textarea,.comments-box select { background:#fffaf0; }
+.final { background:#22201e; color:#e7d1a4; }
+.final:before { opacity:.07; }
+.main-person-name { color:#70552e; font-size:clamp(56px,14vw,76px) !important; }
+@media(max-width:340px){ .art-cover-name{font-size:49px}.art-hero-name{font-size:70px}.art-cover-date{font-size:16px} }
+
+/* Audio welcome controls; deliberately separate from payment and admin UI */
+.welcome-actions{margin:20px auto 12px;display:flex;flex-direction:column;align-items:center;gap:7px}
+.welcome-repeat{border:1px solid #a8874d;background:linear-gradient(135deg,#302b22,#635031);color:#f9df9c;padding:10px 20px;border-radius:30px;font:600 12px 'DM Sans',sans-serif;letter-spacing:.25px;box-shadow:0 5px 16px #0002}
+.welcome-repeat:active{transform:scale(.97)}.welcome-actions span{font:11px 'DM Sans',sans-serif;color:#7a674b}
+
+/* Custom recolor + music-sync text animation */
+:root{--forest:#5e2633;--moss:#6e4151;--taupe:#b88786;--brown:#8f4357;--deep:#391924;--cream:#f7ece3;--paper:#fff5ee;--ink:#432534;--border:#b36b7b;}
+body{background:#2b1319;color:var(--ink);}
+.site{background-color:#f2ded3;box-shadow:0 8px 80px #12070bbb;}
+.cover{background:#261117;}
+.cover-inner{box-shadow:0 0 72px #18060cbf;}
+.cover:after{background:radial-gradient(circle at 50% 39%, transparent 53%, #6b344514);}
+.opening-flash{background:#fff0f1;}
+.art-cover-name,.art-cover-date,.art-hero-name,.art-hero-date{color:#7f3145;text-shadow:0 1px 0 #fff7ef80,0 5px 18px #4b183538;}
+.butterfly:before,.butterfly:after{background:linear-gradient(125deg,#301117 0%,#a24c66 25%,#f1c7b4 54%,#6f2741 73%,#19080d 100%);}
+.paper-card{border-color:#bb7687;box-shadow:inset 0 0 0 4px #fff6ef94,0 5px 17px #3f19262f;}
+.paper-card:before{background:#fff0ee66;}
+.paper-card:after{border-color:#c78b9860;}
+.block-brown{background:#4b2230;color:#fff4ed;}
+.quote-paper{background:#fff6f0f2;color:#472635;}
+.time-box{background:#8c4256;color:#fff7f1;}
+.event-oval{color:#6f3245;}
+.event-oval:before{background:#fff1e8cf;}
+.event-oval .day,.event-oval .heart,.event-oval .pin{color:#9f5568;}
+.outline-action{color:#6e3043;border-color:#ba7487;background:#fff3edf2;}
+.instagram{background:#9b4b62;}
+.bank-card{background:linear-gradient(135deg,#fff6f0,#edd5cf 52%,#fff1ea 100%);border:1px solid #c79395;color:#5d2a39;}
+.bank-brand,.bank-number{color:#6d2c40;}
+.comment{border-bottom-color:#d8c2bd;}.comment strong{color:#6d2f41;}
+.final{background:#3c1b25;color:#f9ebdf;}
+.final:before{opacity:.08;}
+.music-button{border-color:#ffe6ea;background:#4a2230;}
+.tag{background:#fff2eed8;border-color:#c89ca666;color:#724051;}
+.welcome-actions{display:flex;flex-direction:column;gap:8px;align-items:center;margin:4px 0 22px}.welcome-repeat{border:0;background:linear-gradient(135deg,#7a3348,#c06f86);color:#fff8f5;padding:10px 20px;border-radius:30px;font:600 12px 'DM Sans',sans-serif;letter-spacing:.25px;box-shadow:0 5px 16px #5d1d3145}.welcome-repeat:active{transform:scale(.97)}.welcome-actions span{font:11px 'DM Sans',sans-serif;color:#8a5d69}.sync-target{will-change:transform,filter,text-shadow}.sync-target.pulse{animation:textBeat .46s ease-out}@keyframes textBeat{0%{transform:scale(1);filter:brightness(1)}30%{transform:scale(1.045);filter:brightness(1.12)}100%{transform:scale(1);filter:brightness(1)}}.lyric-sync{width:min(100%,360px);margin:6px auto 24px;display:grid;gap:9px}.lyric-line{opacity:.24;transform:translateY(12px) scale(.98);transition:opacity .45s ease,transform .45s ease,background .45s ease,color .45s ease,box-shadow .45s ease;border:1px solid #d4bbb6;background:#fff9f4a6;border-radius:999px;padding:9px 14px;text-align:center;font:700 11px/1.45 'DM Sans',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#905064;box-shadow:0 3px 10px #63334410}.lyric-line.active{opacity:1;transform:none;background:linear-gradient(135deg,#7d3348,#c67a8e);color:#fff9f6;border-color:#b6677a;box-shadow:0 7px 18px #66263e3b}.lyric-line.past{opacity:.6;transform:none}.lyric-line.highlight{font-size:13px;letter-spacing:.22em}.intro-text{margin-bottom:18px}.main-person-name{color:#7b3347}.section-title{color:#6a2f40;}
+
+
+/* Elegant original recolor + floating music-responsive text */
+:root{--forest:#35524e;--moss:#647367;--taupe:#b49a6b;--brown:#8c7450;--deep:#213330;--cream:#f7f0e6;--paper:#fbf6ee;--ink:#3d3126;--border:#b99d6e;}
+body{background:#11201f;color:var(--ink);}
+.site{background-color:#ede4d4;box-shadow:0 10px 90px #051111c2;}
+.cover{background:#0e1b1b;}
+.cover-inner{background:linear-gradient(180deg,rgba(23,39,39,.18),rgba(53,39,18,.07)),var(--art-cover) center/100% 100% no-repeat;background-blend-mode:multiply,normal;box-shadow:0 0 75px #081112d1;}
+.cover:after{background:radial-gradient(circle at 50% 39%, transparent 53%, #4e463212);}
+.hero{background:linear-gradient(180deg,rgba(24,42,41,.16),rgba(0,0,0,.02)),var(--art-inner) center/100% 100% no-repeat;background-blend-mode:multiply,normal;}
+.garden-divider{background:linear-gradient(180deg,rgba(16,31,30,.06),rgba(255,255,255,0)),var(--art-garden) center/100% 100% no-repeat;background-blend-mode:multiply,normal;}
+.content{background-image:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.06)),var(--art-walls);background-blend-mode:screen,normal;}
+.opening-flash{background:#fff5ea;}
+.art-cover-name,.art-cover-date,.art-hero-name,.art-hero-date{color:#735734;text-shadow:0 1px 0 #fffbf2aa,0 8px 24px #3326141f;}
+.butterfly:before,.butterfly:after{background:linear-gradient(125deg,#172b2a 0%,#8a7145 26%,#ecd7a2 50%,#a88d5e 70%,#16201f 100%);}
+.paper-card{border-color:#bfa171;box-shadow:inset 0 0 0 4px #fff9f194,0 5px 18px #251e1429;}
+.paper-card:before{background:#fff8f360;}.paper-card:after{border-color:#d5c09c5c;}
+.block-brown{background:#263a38;color:#f7f0e4;}
+.quote-paper{background:#fbf6eef2;color:#3f3225;}
+.time-box{background:#8a7146;color:#fff7ea;}
+.event-oval{color:#624b2f;}.event-oval:before{background:#faf1dec9;}.event-oval .day,.event-oval .heart,.event-oval .pin{color:#8e6f42;}
+.outline-action{color:#5f4727;border-color:#b89965;background:#fbf4e7f0;}
+.instagram{background:#8a6b43;}
+.bank-card{background:linear-gradient(135deg,#fff8f0,#eadcc4 54%,#f9f0e2 100%);border:1px solid #c8b084;color:#533f28;}
+.bank-brand,.bank-number{color:#624a2f;}.comment strong{color:#5f482e;}.final{background:#1f3330;color:#efe3cf;}.music-button{border-color:#faf0df;background:#203230;}.tag{background:#f6f0e5d9;border-color:#bcae9166;color:#635540;}
+.welcome-repeat{background:linear-gradient(135deg,#5c746c,#a48a60);color:#fffdf9;box-shadow:0 5px 16px #2f413d38}.welcome-actions span{color:#6b6a5a}.section-title,.main-person-name{color:#5a4730;}
+:root{--music-energy:0;}
+.art-cover-name,.art-cover-date,.art-hero-name,.art-hero-date,.sync-title,.main-person-name,.lyric-line{will-change:transform,filter,text-shadow;}
+.art-cover-name,.art-cover-date,.art-hero-name,.art-hero-date,.sync-title,.main-person-name{animation:gentleFloat 6s ease-in-out infinite;transform:translateY(calc(var(--music-energy) * -10px));filter:drop-shadow(0 2px calc(6px + var(--music-energy) * 16px) rgba(85,68,38,.18));transition:transform .14s linear,filter .14s linear,text-shadow .14s linear;}
+@keyframes gentleFloat{0%,100%{translate:0 0}50%{translate:0 -7px}}
+.lyric-sync{width:min(100%,370px);margin:8px auto 24px;display:grid;gap:10px;perspective:700px}
+.lyric-line{opacity:.42;transform:translateY(calc(10px + var(--music-energy) * -11px)) scale(calc(.985 + var(--music-energy) * .02));transition:opacity .36s ease,transform .14s linear,background .36s ease,color .36s ease,box-shadow .36s ease;border:1px solid #d8ccb7;background:linear-gradient(135deg,#fffaf4d6,#f4eee6b4);backdrop-filter:blur(3px);border-radius:999px;padding:10px 15px;text-align:center;font:700 11px/1.5 'DM Sans',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#81705a;box-shadow:0 6px 14px rgba(60,48,28,.08);animation:lyricFloat 5.4s ease-in-out infinite}
+.lyric-line:nth-child(2){animation-delay:.35s}.lyric-line:nth-child(3){animation-delay:.7s}.lyric-line:nth-child(4){animation-delay:1.05s}.lyric-line:nth-child(5){animation-delay:1.4s}
+@keyframes lyricFloat{0%,100%{translate:0 0}50%{translate:0 -8px}}
+.lyric-line.active{opacity:1;background:linear-gradient(135deg,#566d66,#b59a6d);color:#fffefb;border-color:#a99169;box-shadow:0 10px 22px rgba(44,66,62,.28);}
+.lyric-line.past{opacity:.72;transform:translateY(calc(var(--music-energy) * -7px)) scale(1)}
+.lyric-line.highlight{font-size:13px;letter-spacing:.22em}
+.scroll-cue{color:#f6f0e6;text-shadow:0 2px 4px #2f2c26b0;}
+
+
+/* Pasangan contoh: sesuaikan judul dua nama untuk layar HP tanpa mengganti tema. */
+.art-cover-name{font-size:clamp(36px,9.8vw,57px);white-space:nowrap;}
+.art-hero-name{font-size:clamp(40px,10.5vw,68px);white-space:nowrap;}
+@media(max-width:360px){.art-cover-name{font-size:36px}.art-hero-name{font-size:39px}}
+
+/* === Royal Illustrated: restore ornate source-video composition; original sage-ivory palette === */
+:root{--forest:#5c715c;--moss:#71836c;--taupe:#9f8b66;--brown:#9f8968;--deep:#4b5948;--cream:#f6f1e5;--paper:#f5efe2;--ink:#4c4739;--border:#8b967a;}
+body{background:#333b32;color:#4b4536;}
+.site{background-color:#e9e4d5;box-shadow:0 10px 75px #161d17a8;}
+.cover{background:#353d33;}
+.cover-inner{background:var(--art-cover) center/100% 100% no-repeat!important;box-shadow:0 0 45px #151a13aa;}
+.cover:after{background:none;}
+.hero{background:var(--art-inner) center/100% 100% no-repeat!important;}
+.garden-divider{background:var(--art-garden) center/100% 100% no-repeat!important;}
+.content{background:var(--art-walls) center top/100% auto repeat-y!important;}
+.opening-flash{background:#f1efe3;}
+.art-cover-name,.art-cover-date,.art-hero-name,.art-hero-date{color:#495443;text-shadow:0 1px 0 #fff9edaa,0 2px 11px #212b1b26;}
+.art-cover-name,.art-hero-name{font-family:'Great Vibes','Allura','Apple Chancery','URW Chancery L',cursive;letter-spacing:.6px;font-weight:400;font-style:normal;text-transform:none;}
+.art-cover-name{top:32%;font-size:clamp(46px,12.3vw,63px);white-space:nowrap;}
+.art-cover-date{top:41.5%;font-size:clamp(17px,4.4vw,22px);color:#4b493f;}
+.art-hero-name{top:36.3%;font-size:clamp(54px,13.9vw,82px);white-space:nowrap;}
+.art-hero-date{top:55.5%;font-size:clamp(17px,4.4vw,22px);}
+.cover-open{top:64.5%;left:26.8%;width:46.4%;height:6%;}
+.cover-open:focus-visible{outline:3px solid #6b8765;outline-offset:7px;border-radius:50px;}
+.butterfly:before,.butterfly:after{background:linear-gradient(125deg,#2b3930 0%,#b1a272 29%,#f0ce8c 52%,#495649 70%,#1f2d23 100%);}
+.paper-card{border-color:#a5a18c;background:#eee9dc var(--art-paper) center/cover;box-shadow:inset 0 0 0 4px #fff8e387,0 7px 23px #3b33272c;}
+.paper-card:before{background:#f9f5e69a;}
+.paper-card:after{border-color:#9f9b836f;}
+.block-brown{background:#8f816d;color:#fff8ea;}
+.block-brown:before{opacity:.16;}
+.quote-paper{background:#f4f0e4f2;color:#554f41;}
+.time-box{background:#80775f;color:#fff8ea;}
+.event-oval{color:#6d6351;border-radius:50% / 21%;}
+.event-oval:before{background:#eeeadeb6;}
+.event-oval .day,.event-oval .heart,.event-oval .pin{color:#817960;}
+.outline-action{color:#5b654b;border-color:#87947a;background:#f6f1e7ed;}
+.bank-card{background:linear-gradient(125deg,#fbf7ed,#e4decd 55%,#f7f2e8);border:1px solid #bbb59a;color:#4e4b3f;}
+.bank-brand,.bank-number{color:#5b654e;}
+.wish-form button,.copy-action{background:#455645;color:#f8f2e5;}
+.final{background:#596858;color:#f5f0e4;}
+.music-button{background:#425743;border-color:#eee8d6;}
+.tag{background:#f3efdfd8;border-color:#7d8b7659;color:#4b5749;}
+.section-title,.main-person-name{color:#58624e;}
+.welcome-repeat{background:linear-gradient(135deg,#536c58,#99856a);color:#fff8e9;box-shadow:0 5px 14px #24332835;}
+.welcome-actions span{color:#6a6c5e;}
+.lyric-sync{width:min(100%,360px);height:67px;display:block;position:relative;margin:0 auto 20px;}
+.lyric-line,.lyric-line.highlight{position:absolute;inset:0;display:flex;justify-content:center;align-items:center;background:transparent;border:0;border-radius:0;box-shadow:none!important;backdrop-filter:none;color:#65765f;font:italic 21px/1.2 'Cormorant Garamond',Georgia,serif;letter-spacing:.025em;text-transform:none;opacity:0;transform:translateY(20px) scale(.96);transition:opacity .6s ease,transform .3s ease;text-shadow:0 2px 15px #fff9ea;}
+.lyric-line.active{opacity:1;color:#536149;background:transparent;border:0;transform:translateY(calc(-8px - var(--music-energy) * 7px)) scale(calc(1 + var(--music-energy) * .025));}
+.lyric-line.past{opacity:0;transform:translateY(-19px);}
+.lyric-line:nth-child(1),.lyric-line:nth-child(2),.lyric-line:nth-child(3),.lyric-line:nth-child(4),.lyric-line:nth-child(5){animation:none;}
+.verse-count{gap:7px;}.cover-open{cursor:pointer;}
+@media(max-width:380px){.art-cover-name{font-size:clamp(40px,11.8vw,48px)}.art-hero-name{font-size:clamp(48px,13vw,60px)}.art-cover-date{font-size:16px}}
+@media(prefers-reduced-motion:reduce){.art-cover-name,.art-cover-date,.art-hero-name,.art-hero-date,.sync-title,.main-person-name{animation:none;transform:none}.lyric-line{transition:none}}
+
+
+/* Fixed lettering artwork keeps the thin calligraphy visible even without Google Fonts */
+.art-cover-name,.art-hero-name{left:15%;width:70%;height:9%;display:flex;align-items:center;justify-content:center;}
+.art-cover-name{top:31.3%;}.art-hero-name{top:36%;height:12%}
+.art-cover-name img,.art-hero-name img{width:100%;height:auto;max-height:100%;object-fit:contain;filter:drop-shadow(0 2px 1px #fff9e9aa);}
 </style>
 </head>
 <body>
-<!-- Botanical vector motifs, with no human figures, photos, or assets from the reference video. -->
-<template id="plantTemplate"><svg viewBox="0 0 180 250" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M18 243C52 203 70 152 81 104C89 72 104 37 135 8" stroke="currentColor" stroke-width="1.15" stroke-linecap="round"/><path d="M45 204C10 200 10 174 23 162C40 175 49 187 45 204Zm25-50C25 147 23 123 40 109C56 120 71 139 70 154Zm16-56C60 87 62 58 81 48C94 65 96 82 86 98Zm10-28c6-35 29-48 42-48c-2 25-17 39-42 48ZM57 175c32-24 50-16 54-2c-15 15-36 16-54 2Zm18-45c27-22 45-17 49-5c-14 16-31 18-49 5Zm20-59c24-22 42-20 47-11c-12 17-28 21-47 11Zm30-43c25-10 40-7 42 2c-12 12-30 14-42-2Z" stroke="currentColor" stroke-width="1.1" fill="currentColor" fill-opacity=".13"/><g fill="currentColor" fill-opacity=".22"><circle cx="111" cy="43" r="4"/><circle cx="133" cy="11" r="3"/><circle cx="51" cy="173" r="3"/></g></svg></template>
-<div id="cover" class="cover" role="dialog" aria-modal="true" aria-label="Sampul Undangan Arga dan Sekar">
-  <div class="cover-shell">
-    <div class="botanical top-left b1"></div><div class="botanical top-right b2"></div><div class="botanical bottom-left b2"></div><div class="botanical bottom-right b1"></div>
-    <div class="cover-main"><div class="royal-arch"></div>
-      <div class="cover-symbol" aria-hidden="true">A <span style="font-size:19px">✦</span> S</div>
-      <div class="signature cover-kicker">Kita-Kita Undangan · Royal</div>
-      <h2 class="cover-title">The Wedding Of</h2>
-      <h1 class="script cover-name floataudio">Arga <span style="font-size:.55em;color:#ae9673">&amp;</span> Sekar</h1>
-      <div class="ornament" aria-hidden="true">✧</div>
-      <div class="cover-date">Kamis · 12 Desember 2030</div>
-      <p class="invite-recipient">Kepada Bapak / Ibu / Saudara / i<br>Tamu Undangan</p>
-      <button type="button" id="openInvite" class="open-button">✧ &nbsp; Buka Undangan &nbsp; ✧</button>
-    </div>
-    <div class="cover-footer">A CHAPTER OF LOVE · ROYAL BOTANICAL</div>
+<div id="cover" class="cover" role="dialog" aria-label="Sampul undangan Arga &amp; Sekar" aria-modal="true">
+  <div class="cover-inner">
+    <div class="art-cover-name sync-target" aria-label="Arga dan Sekar"><img src="assets/nama-arga-sekar.png" alt="Arga &amp; Sekar"></div>
+    <div class="art-cover-date" aria-hidden="true">Kamis, 12 Desember 2030</div>
+    <button class="cover-open" id="openInvite" aria-label="Buka Undangan Arga &amp; Sekar">Buka Undangan</button>
   </div>
 </div>
+<div class="opening-flash" aria-hidden="true"></div>
 <main class="site" id="site" hidden>
-  <section class="hero" aria-label="Pembukaan undangan Arga dan Sekar">
-    <div class="botanical top-left b1"></div><div class="botanical top-right b2"></div><div class="botanical bottom-left b2"></div><div class="botanical bottom-right b1"></div>
-    <span class="floating-petal petal-a"></span><span class="floating-petal petal-b"></span><span class="floating-petal petal-c"></span>
-    <div class="hero-inner"><div class="smallcaps">A day to cherish, forever</div><div class="ornament">✧</div><p>Dengan segenap cinta dan kebahagiaan</p><h1 class="floataudio">Arga &amp; Sekar</h1><div class="dates">12 . 12 . 2030</div></div>
-    <div class="scroll-hint">GESER KE BAWAH<span>⌄</span></div>
+ <section class="hero" aria-label="Undangan Pernikahan Arga &amp; Sekar">
+  <div class="art-hero-name sync-target" aria-label="Arga dan Sekar"><img src="assets/nama-arga-sekar.png" alt="Arga &amp; Sekar"></div>
+  <div class="art-hero-date" aria-hidden="true">Kamis, 12 Desember 2030</div>
+  <span class="butterfly a"></span><span class="butterfly b"></span>
+  <div class="scroll-cue">GESER KE BAWAH<span>⌄</span></div>
+ </section>
+ <div class="garden-divider" aria-hidden="true"></div>
+ <div class="content">
+  <section class="paper-card introduction reveal" id="mempelai">
+   <h2 class="section-title sync-target sync-title">Undangan Pernikahan</h2>
+   <p class="body-copy intro-text">Assalamualaikum wr. wb.<br><br>Dengan memohon rahmat dan rida Allah SWT, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dan memberikan doa restu pada hari yang istimewa.</p>
+   <div class="lyric-sync" aria-label="Animasi tulisan mengikuti musik">
+      <div class="lyric-line" data-at="0.5">Selamat Datang</div>
+      <div class="lyric-line" data-at="4">Di Hari Bahagia</div>
+      <div class="lyric-line" data-at="8">Undangan Pernikahan</div>
+      <div class="lyric-line highlight" data-at="12">Arga &amp; Sekar</div>
+      <div class="lyric-line" data-at="17">Terima kasih atas doa restunya</div>
+   </div>
+   <div class="welcome-actions"><button type="button" class="welcome-repeat" id="replayMusic" aria-label="Putar ulang musik pembuka">▶ Putar Ulang Musik</button><span>Alunan musik untuk hari bahagia</span></div><div class="intro-person"><h3 class="script main-person-name sync-target">Arga &amp; Sekar</h3><p>Dengan penuh kebahagiaan, mengundang keluarga dan sahabat untuk menghadiri hari istimewa ini.</p></div>
   </section>
-  <section class="section paper" id="mempelai">
-    <div class="botanical top-left b2"></div><div class="botanical bottom-right b1"></div>
-    <div class="inner-frame reveal">
-      <div class="mono-label">Undangan Pernikahan</div>
-      <div class="ornament">✧</div>
-      <h2 class="section-heading">Sebuah Awal yang Indah</h2>
-      <p class="body-copy">Assalamualaikum wr. wb.<br><br>Dengan memohon rahmat dan rida Allah SWT, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dan memberikan doa restu pada hari yang istimewa.</p>
-      <div class="person-names floataudio">Arga &amp; Sekar</div>
-      <p class="blessing">Dua hati, satu perjalanan indah.</p>
-      <div class="lyric-box" aria-label="Animasi tulisan mengikuti irama musik">
-        <div class="lyric-line" data-at="0.7">Selamat Datang</div>
-        <div class="lyric-line" data-at="4.1">Pada Hari Penuh Cinta</div>
-        <div class="lyric-line" data-at="8.4">Sebuah Awal Bahagia</div>
-        <div class="lyric-line" data-at="12.8">Arga &amp; Sekar</div>
-        <div class="lyric-line" data-at="18.5">Terima Kasih Atas Doa Restunya</div>
-      </div>
-      <button type="button" class="music-replay" id="replayMusic">↻ Putar Ulang Musik</button>
-    </div>
-  </section>
-  <section class="section sage" id="hitung-mundur">
-    <div class="time-intro reveal"><div class="mono-label" style="color:#e8d7b5">Menuju Hari Bahagia</div><div class="ornament" style="color:#dec8a1">✧</div><p>Dalam setiap pertemuan, ada kisah indah yang dituliskan untuk selamanya.</p><h2 class="section-heading light" style="margin-top:26px">Counting The Days</h2></div>
-    <div class="countdown reveal"><div class="countbox"><strong id="days">00</strong><span>Hari</span></div><div class="countbox"><strong id="hours">00</strong><span>Jam</span></div><div class="countbox"><strong id="minutes">00</strong><span>Menit</span></div><div class="countbox"><strong id="seconds">00</strong><span>Detik</span></div></div>
-  </section>
-  <section class="section soft" id="akad"><article class="event-card reveal"><div class="smallcaps">Rangkaian Acara</div><div class="event-icon">❧</div><h2>Akad Nikah</h2><div class="ornament">✧</div><p class="event-date">Kamis, 12 Desember 2030</p><p class="event-hour">08.00 WIB</p><div class="event-icon">⌖</div><p class="event-location">Kediaman Mempelai Wanita<br>Pasar 7, Kabupaten Asahan<br>Sumatera Utara</p><a class="event-action" href="https://www.google.com/maps/search/?api=1&amp;query=Pasar+7+Kabupaten+Asahan" target="_blank" rel="noopener noreferrer">⌖ &nbsp; Lihat Lokasi</a></article></section>
-  <section class="section paper" id="resepsi"><article class="event-card reveal"><div class="smallcaps">Rangkaian Acara</div><div class="event-icon">❧</div><h2>Resepsi Pernikahan</h2><div class="ornament">✧</div><p class="event-date">Kamis, 12 Desember 2030</p><p class="event-hour">10.00 WIB s/d selesai</p><div class="event-icon">⌖</div><p class="event-location">Kediaman Mempelai Wanita<br>Pasar 7, Kabupaten Asahan<br>Sumatera Utara</p><a class="event-action" href="https://www.google.com/maps/search/?api=1&amp;query=Pasar+7+Kabupaten+Asahan" target="_blank" rel="noopener noreferrer">⌖ &nbsp; Lihat Lokasi</a></article></section>
-  <section class="section soft" id="kisah"><div class="story-copy reveal"><div class="smallcaps">Our Story</div><div class="ornament">✧</div><h2 class="section-heading">Love Story</h2><p style="font-size:20px;color:#677667;margin:0">Cerita sederhana yang menjadi kisah selamanya.</p><div class="story-list"><div class="story-item"><h3>Awal Pertemuan</h3><p>Perkenalan pertama melalui sebuah pertemuan sederhana yang membuat kami semakin dekat. Dari sana tumbuh cerita yang indah.</p></div><div class="story-connector"></div><div class="story-item"><h3>Acara Lamaran</h3><p>Seiring berjalannya waktu, kami memantapkan hati untuk berjalan bersama menuju hari bahagia.</p></div><div class="story-connector"></div><div class="story-item"><h3>Hari Pernikahan</h3><p>Dengan penuh syukur dan doa keluarga, kami memulai perjalanan baru sebagai pasangan.</p></div></div></div></section>
-  <section class="section sage" id="hadiah" style="text-align:center"><div class="reveal"><div class="mono-label" style="color:#e9d7b4">Tanda Kasih</div><div class="ornament" style="color:#ecd7b0">✧</div><h2 class="section-heading light">Wedding Gift</h2><p class="gift-note">Doa restu Anda adalah hadiah yang paling berarti bagi kami. Jika berkenan memberikan hadiah, berikut adalah contoh tampilannya.</p><div class="gift-box"><h3>HADIAH DIGITAL</h3><p>Informasi rekening belum dicantumkan</p><small>Contoh Royal · Tidak ada nomor pembayaran aktif</small></div><div class="gift-box"><h3>KIRIM HADIAH</h3><p>Hubungi penyelenggara untuk detail pengiriman</p><small>Data alamat pengiriman belum disediakan</small></div></div></section>
-  <section class="section paper" id="ucapan"><div class="wishes-wrap reveal"><div class="mono-label">Doa dan Harapan</div><div class="ornament">✧</div><h2 class="section-heading">Wedding Wishes</h2><p>Bagikan doa dan ucapan hangat untuk Arga &amp; Sekar.</p><form class="wish-form" id="wishForm"><label for="wishName">Nama</label><input id="wishName" maxlength="80" required placeholder="Nama Anda" autocomplete="name"><label for="wishText">Ucapan</label><textarea id="wishText" maxlength="500" required placeholder="Tulis ucapan di sini ..."></textarea><label for="wishAttendance">Konfirmasi Kehadiran</label><select id="wishAttendance"><option>Hadir</option><option>Berhalangan hadir</option><option>Belum bisa memastikan</option></select><button class="wish-submit" type="submit">Kirim Ucapan</button><div id="wishFeedback" role="status"></div></form><p class="demo-label">Ucapan contoh ini tersimpan hanya di perangkat Anda.</p><div class="comments" id="comments" aria-live="polite"></div></div></section>
-  <footer class="footer"><div class="botanical top-left b1" style="color:#c9cfae"></div><div class="botanical bottom-right b2" style="color:#d7cf9c"></div><div class="footer-inner reveal"><div class="smallcaps">Terima Kasih</div><div class="ornament">✧</div><p>Merupakan kehormatan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.</p><h2 class="floataudio">Arga &amp; Sekar</h2><p style="font-size:18px">Wassalamualaikum wr. wb.</p><small>Dengan kasih,<br>Kita-Kita Undangan · Royal Botanical</small></div></footer>
+ </div>
+ <section class="block-brown reveal" id="hitung-mundur">
+  <div class="quote-paper"><p>Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang. Sungguh, pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir.</p><p style="margin-top:12px;font-size:14px">(QS. Ar-Rum Ayat 21)</p>
+  <div class="verse-count" aria-label="Hitung mundur pernikahan"><div class="time-box"><strong id="days">00</strong><span>Days</span></div><div class="time-box"><strong id="hours">00</strong><span>Hours</span></div><div class="time-box"><strong id="minutes">00</strong><span>Minutes</span></div><div class="time-box"><strong id="seconds">00</strong><span>Seconds</span></div></div></div>
+ </section>
+ <section class="block-brown event-brown reveal" aria-label="Jadwal pernikahan">
+  <article class="event-oval" id="akad"><div class="heart">♥</div><h2 class="script">Akad Nikah</h2><p class="day">Kamis, 12 Desember 2030</p><p class="hour">Pukul : 08.00 WIB</p><div class="pin">♥</div><p class="location-title">Kediaman Mempelai Wanita</p><p class="address">Pasar 7, Kabupaten Asahan</p><a class="outline-action" href="https://www.google.com/maps/search/?api=1&query=Pasar+7,+Kabupaten+Asahan" target="_blank" rel="noopener noreferrer">⌖ Buka Peta</a></article>
+ </section>
+ <section class="block-brown event-brown reveal"><article class="event-oval" id="resepsi"><div class="heart">♥</div><h2 class="script">Resepsi Pernikahan</h2><p class="day">Kamis, 12 Desember 2030</p><p class="hour">Pukul : 10.00 WIB s/d selesai</p><div class="pin">♥</div><p class="location-title">Kediaman Mempelai Wanita</p><p class="address">Pasar 7, Kabupaten Asahan</p><a class="outline-action" href="https://www.google.com/maps/search/?api=1&query=Pasar+7,+Kabupaten+Asahan" target="_blank" rel="noopener noreferrer">⌖ Buka Peta</a></article></section>
+ <div class="content"><section class="paper-card story reveal" id="kisah"><h2 class="section-title">Love Story</h2>
+  <div class="story-item"><h3>Awal Pertemuan</h3><p>Perkenalan pertama kali melalui sebuah pertemuan sederhana yang membuat kami semakin dekat. Dari pertemuan itu tumbuh cerita yang indah.</p></div>
+  <div class="story-timeline"></div>
+  <div class="story-item"><h3>Acara Lamaran</h3><p>Seiring berjalannya waktu, kami memutuskan untuk melangsungkan acara lamaran pada momen yang istimewa.</p></div>
+  <div class="story-timeline"></div>
+  <div class="story-item"><h3>Acara Resepsi</h3><p>Akhir dari perjalanan pencarian kami masing-masing, kami memutuskan untuk mengikat janji suci yaitu melangsungkan akad nikah yang insyaallah menjadi awal kisah kami bersama.</p></div>
+ </section></div>
+ <section class="block-brown gift reveal" id="hadiah"><h2>Wedding Gift</h2><p class="gift-intro">Doa restu Anda adalah hadiah yang paling berarti bagi kami. Jika berkenan memberikan hadiah, berikut adalah contoh tampilan kartu hadiah.</p>
+  <div class="bank-card"><div class="bank-brand">BNI</div><div class="bank-chip"></div><div class="bank-name">Nama Penerima Contoh</div><div class="bank-number">0000 0000 0000</div><div class="bank-sample">DEMO — bukan rekening pembayaran</div><button type="button" class="copy-action" data-copy="000000000000">Salin ▣</button></div>
+  <div class="bank-card"><div class="bank-brand">DANA</div><div class="bank-chip"></div><div class="bank-name">Nama Penerima Contoh</div><div class="bank-number">0000 0000 0000</div><div class="bank-sample">DEMO — bukan nomor pembayaran</div><button type="button" class="copy-action" data-copy="000000000000">Salin ▣</button></div>
+ </section>
+ <div class="content"><section class="paper-card wishes reveal" id="ucapan"><h2>Wedding Wishes</h2><div class="comments-box"><h3><span id="commentCount">0</span> Comments</h3>
+   <form class="wish-form" id="wishForm"><label class="sr-only" for="wishName">Nama</label><input id="wishName" name="name" placeholder="Nama" required maxlength="80"><label class="sr-only" for="wishText">Ucapan</label><textarea id="wishText" name="message" placeholder="Ucapan" required maxlength="500"></textarea><label class="sr-only" for="wishAttendance">Konfirmasi Kehadiran</label><select id="wishAttendance"><option value="">Konfirmasi Kehadiran</option><option>Hadir</option><option>Berhalangan hadir</option><option>Masih belum pasti</option></select><button type="submit">Kirim</button><span id="wishFeedback" role="status" style="font-size:12px"></span></form>
+   <div id="comments"></div>
+  </div><p class="tiny" style="margin-top:14px">Ucapan pada contoh ini tersimpan di browser perangkat, bukan dikirim ke admin. </p></section></div>
+ <footer class="final reveal"><div><p>Merupakan suatu kebahagiaan dan kehormatan kami,<br>apabila Bapak/Ibu/Saudara/i berkenan hadir dan<br>memberikan doa restu kepada kami.</p><h2 class="script">Arga &amp; Sekar</h2><p>Wassalamualaikum wr. wb.</p><small>Created by<br>Kita-Kita Undangan</small></div></footer>
 </main>
-<button id="musicToggle" type="button" class="music-toggle" aria-pressed="false" aria-label="Putar musik"><span class="on-icon" aria-hidden="true">♫</span><span class="mute-icon" aria-hidden="true">♪</span></button>
-<audio id="weddingAudio" preload="auto" loop src="musik-royal-elegan.mp3"></audio>
+<button id="musicToggle" class="music-button" aria-label="Putar musik" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 1 0 0-18zm0 5.7a3.3 3.3 0 1 1 0 6.6 3.3 3.3 0 1 1 0-6.6zM12 1.3v3M12 19.7v3M1.3 12h3M19.7 12h3"/></svg></button>
+<div class="tag">Royal · Kita-Kita Undangan</div>
+<audio id="inviteMusic" preload="auto" loop src="musik-royal.mp3"></audio>
+
 <script>
 (()=>{
-  'use strict';
-  const $=sel=>document.querySelector(sel), $$=sel=>[...document.querySelectorAll(sel)];
-  const body=document.body, site=$('#site'), cover=$('#cover'), audio=$('#weddingAudio'), musicButton=$('#musicToggle');
-  const plant=$('#plantTemplate').innerHTML;
-  $$('.botanical').forEach(el=>el.innerHTML=plant);
-  const lines=$$('.lyric-line').sort((a,b)=>Number(a.dataset.at)-Number(b.dataset.at));
-  let opened=false, ctx=null, analyser=null, frequencyData=null, source=null, animationFrame=0, lastIndex=-1;
-  const root=document.documentElement;
-  function setMusicUI(on){musicButton.setAttribute('aria-pressed',String(on));musicButton.setAttribute('aria-label',on?'Jeda musik':'Putar musik');musicButton.classList.toggle('playing',on);}
-  function prepareAudio(){
-    try{
-      const Klass=window.AudioContext||window.webkitAudioContext;
-      if(!Klass || ctx)return;
-      ctx=new Klass(); analyser=ctx.createAnalyser(); analyser.fftSize=256; analyser.smoothingTimeConstant=.82;
-      source=ctx.createMediaElementSource(audio);source.connect(analyser);analyser.connect(ctx.destination);
-      frequencyData=new Uint8Array(analyser.frequencyBinCount);
-    }catch(e){analyser=null;}
-  }
-  function resetLines(){lastIndex=-1;lines.forEach(l=>l.classList.remove('past','active'));}
-  function updateLines(){
-    const t=audio.currentTime||0;
-    let idx=-1;lines.forEach((l,i)=>{if(t>=Number(l.dataset.at))idx=i;});
-    if(idx!==lastIndex){lines.forEach((l,i)=>{l.classList.toggle('active',i===idx);l.classList.toggle('past',i<idx);});lastIndex=idx;}
-  }
-  function energyLoop(){
-    if(audio.paused){animationFrame=0;root.style.setProperty('--energy','0');return;}
-    if(analyser&&frequencyData){
-      analyser.getByteFrequencyData(frequencyData);
-      const low=[2,3,4,5,6,7].reduce((s,i)=>s+frequencyData[i],0)/(6*255);
-      const mid=[8,10,12,16,20,24].reduce((s,i)=>s+frequencyData[i],0)/(6*255);
-      root.style.setProperty('--energy',Math.min(1,low*.7+mid*.45).toFixed(3));
-    }else{root.style.setProperty('--energy',((Math.sin((audio.currentTime||0)*2.3)+1)*.17+.12).toFixed(3));}
-    updateLines();animationFrame=requestAnimationFrame(energyLoop);
-  }
-  function playMusic(){
-    prepareAudio();
-    if(ctx?.state==='suspended')ctx.resume().catch(()=>{});
-    audio.volume=.83;
-    audio.play().then(()=>{setMusicUI(true);if(!animationFrame)energyLoop();}).catch(()=>setMusicUI(false));
-  }
-  $('#openInvite').addEventListener('click',()=>{
-    if(opened)return;opened=true;site.hidden=false;body.classList.add('opened');cover.setAttribute('aria-hidden','true');
-    window.scrollTo({top:0,behavior:'instant'});
-    playMusic();const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}}),{threshold:.08,rootMargin:'0px 0px -15px 0px'});
-    $$('.reveal').forEach(el=>observer.observe(el));
-  });
-  musicButton.addEventListener('click',()=>audio.paused?playMusic():(audio.pause(),setMusicUI(false)));
-  $('#replayMusic').addEventListener('click',()=>{audio.currentTime=0;resetLines();playMusic();});
-  audio.addEventListener('play',()=>{setMusicUI(true);if(!animationFrame)energyLoop();});
-  audio.addEventListener('pause',()=>setMusicUI(false));
-  audio.addEventListener('seeked',updateLines);
-  function countdown(){const diff=Math.max(0,new Date('2030-12-12T08:00:00+07:00').getTime()-Date.now());
-    const values=[Math.floor(diff/86400000),Math.floor(diff/3600000)%24,Math.floor(diff/60000)%60,Math.floor(diff/1000)%60];
-    ['days','hours','minutes','seconds'].forEach((id,i)=>$('#'+id).textContent=String(values[i]).padStart(2,'0'));
-  }countdown();setInterval(countdown,1000);
-  const store='royal-botanical-arga-sekar-wishes-v1';let entries=[];
-  try{const parsed=JSON.parse(localStorage.getItem(store)||'[]');if(Array.isArray(parsed))entries=parsed;}catch(e){}
-  const escapeHtml=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  function renderComments(){ $('#comments').innerHTML=entries.slice().reverse().map(item=>`<div class="comment"><strong>${escapeHtml(item.name)}</strong><div>${escapeHtml(item.message)}</div><small>${escapeHtml(item.attendance||'')}</small><time>${escapeHtml(item.date||'')}</time></div>`).join('');}
-  renderComments();
-  $('#wishForm').addEventListener('submit',e=>{
-    e.preventDefault();const name=$('#wishName').value.trim(),message=$('#wishText').value.trim(),attendance=$('#wishAttendance').value;
-    if(!name||!message)return;
-    entries.push({name:name.slice(0,80),message:message.slice(0,500),attendance,date:new Date().toLocaleString('id-ID')});entries=entries.slice(-30);
-    try{localStorage.setItem(store,JSON.stringify(entries));}catch(e){}
-    renderComments();e.target.reset();$('#wishFeedback').textContent='Ucapan ditambahkan pada perangkat ini.';
-  });
+ const $=s=>document.querySelector(s),body=document.body,cover=$('#cover'),site=$('#site'),music=$('#inviteMusic'),mt=$('#musicToggle');
+ let opened=false;
+ const lyricLines=[...document.querySelectorAll('.lyric-line')].sort((a,b)=>parseFloat(a.dataset.at)-parseFloat(b.dataset.at));
+ let lastLyric=-2,audioCtx=null,analyser=null,sourceNode=null,freqData=null,rafId=0;
+ function setMusicUI(isPlaying){mt.classList.toggle('playing',isPlaying);mt.setAttribute('aria-label',isPlaying?'Matikan musik':'Putar musik');mt.setAttribute('aria-pressed',String(isPlaying));}
+ function ensureAudioAnalyser(){
+   if(audioCtx||!(window.AudioContext||window.webkitAudioContext)) return;
+   audioCtx=new (window.AudioContext||window.webkitAudioContext)();
+   sourceNode=audioCtx.createMediaElementSource(music);
+   analyser=audioCtx.createAnalyser();
+   analyser.fftSize=128; analyser.smoothingTimeConstant=.78;
+   sourceNode.connect(analyser); analyser.connect(audioCtx.destination);
+   freqData=new Uint8Array(analyser.frequencyBinCount);
+ }
+ function stopWave(){ if(rafId){ cancelAnimationFrame(rafId); rafId=0; } document.documentElement.style.setProperty('--music-energy','0'); }
+ function runWave(){
+   if(!analyser||!freqData) return;
+   analyser.getByteFrequencyData(freqData);
+   const avg=freqData.reduce((a,b)=>a+b,0)/freqData.length/255;
+   const bass=(freqData[2]+freqData[3]+freqData[4]+freqData[5])/(4*255);
+   const energy=Math.min(1,(avg*0.85)+(bass*0.55));
+   document.documentElement.style.setProperty('--music-energy',energy.toFixed(3));
+   rafId=requestAnimationFrame(runWave);
+ }
+ function startReactive(){
+   ensureAudioAnalyser();
+   if(audioCtx&&audioCtx.state==='suspended') audioCtx.resume().catch(()=>{});
+   if(!rafId) runWave();
+ }
+ function playBgm(){music.volume=.88;startReactive();return music.play().then(()=>setMusicUI(true)).catch(()=>setMusicUI(false));}
+ function resetSync(){lastLyric=-2;lyricLines.forEach(l=>l.classList.remove('active','past'));}
+ function updateSync(){
+   const t=music.currentTime||0;
+   let idx=-1; lyricLines.forEach((line,i)=>{ if(t>=parseFloat(line.dataset.at||'0')) idx=i;});
+   if(idx!==lastLyric){ lyricLines.forEach((line,i)=>{line.classList.toggle('active',i===idx);line.classList.toggle('past',i<idx && idx!==-1); if(idx===-1){line.classList.remove('past');}}); lastLyric=idx; }
+ }
+ function onOpen(){if(opened)return;opened=true;site.hidden=false;body.classList.add('opened');cover.setAttribute('aria-hidden','true');window.scrollTo({top:0,behavior:'instant'});resetSync();playBgm();reveal();}
+ $('#openInvite').addEventListener('click',onOpen);
+ $('#replayMusic')?.addEventListener('click',()=>{music.currentTime=0;resetSync();playBgm()});
+ mt.addEventListener('click',()=>{if(music.paused){playBgm()}else{music.pause();setMusicUI(false);stopWave()}});
+ music.addEventListener('timeupdate',updateSync);
+ music.addEventListener('play',()=>{setMusicUI(true);startReactive();updateSync();});
+ music.addEventListener('pause',()=>{setMusicUI(false);stopWave();});
+ music.addEventListener('ended',()=>{stopWave(); resetSync();});
+ function reveal(){const ob=new IntersectionObserver(entries=>{for(const e of entries){if(e.isIntersecting){e.target.classList.add('shown');ob.unobserve(e.target)}}},{threshold:.09,rootMargin:'0px 0px -22px 0px'});document.querySelectorAll('.reveal').forEach(el=>ob.observe(el));}
+ const target=new Date('2030-12-12T08:00:00+07:00').getTime();function tick(){const dif=Math.max(0,target-Date.now()),a=[Math.floor(dif/86400000),Math.floor(dif/3600000)%24,Math.floor(dif/60000)%60,Math.floor(dif/1000)%60];['days','hours','minutes','seconds'].forEach((id,i)=>{$('#'+id).textContent=String(a[i]).padStart(2,'0')})}tick();setInterval(tick,1000);
+ document.querySelectorAll('[data-copy]').forEach(b=>b.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(b.dataset.copy);const old=b.textContent;b.textContent='Tersalin ✓';setTimeout(()=>b.textContent=old,1600)}catch{b.textContent='Nomor contoh'}}));
+ function esc(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+ const store='royal-arga-sekar-bersih-v2';let entries=[];try{entries=JSON.parse(localStorage.getItem(store)||'[]');if(!Array.isArray(entries))entries=[]}catch{}
+ function appendComment(c){const div=document.createElement('div');div.className='comment';div.innerHTML=`<strong>${esc(c.name)}</strong><div>${esc(c.message)}</div>${c.attendance?`<div style="font-size:11px;color:#766c5d">${esc(c.attendance)}</div>`:''}<time>${esc(c.date||'Baru saja')}</time>`;$('#comments').prepend(div)}
+ entries.slice(-30).forEach(appendComment);$('#commentCount').textContent=entries.length;
+ $('#wishForm').addEventListener('submit',e=>{e.preventDefault();const name=$('#wishName').value.trim(),message=$('#wishText').value.trim(),attendance=$('#wishAttendance').value;if(!name||!message)return;const c={name:name.slice(0,80),message:message.slice(0,500),attendance,date:new Date().toLocaleString('id-ID')};entries.push(c);entries=entries.slice(-30);try{localStorage.setItem(store,JSON.stringify(entries))}catch{}appendComment(c);$('#commentCount').textContent=entries.length;$('#wishForm').reset();$('#wishFeedback').textContent='Ucapan tampil dan tersimpan pada perangkat ini.'});
 })();
 </script>
-</body>
-</html>
+</body></html>

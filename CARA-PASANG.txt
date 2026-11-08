@@ -1,18 +1,15 @@
-ROYAL BOTANICAL — ARGA & SEKAR (TEMA BARU)
+KITA-KITA UNDANGAN — UPDATE KHUSUS ROYAL CONTOH 1
 
-1. ZIP ini berisi royal.html dan musik-royal-elegan.mp3.
-2. Simpan KEDUA file dalam folder yang sama. Jangan ubah nama file MP3 tanpa mengubah src di royal.html.
-3. Jika memperbarui GitHub/Cloudflare, ganti hanya halaman royal.html dan unggah MP3 pada folder yang sama.
-4. Jangan menghapus bagian Basic, Premium, admin, atau konfigurasi Firebase pada website utama.
-5. Buka royal.html untuk melihat contoh. Tekan tombol "Buka Undangan" agar musik mulai (peramban HP tidak mengizinkan suara autoplay sebelum interaksi).
+1. Buka folder repository website Kita-Kita Undangan di GitHub.
+2. GANTI file royal.html lama dengan royal.html dari ZIP ini.
+3. UPLOAD folder assets beserta isinya ke root repository, sejajar dengan royal.html.
+4. UPLOAD musik-royal.mp3 ke lokasi yang sama dengan royal.html.
+5. Commit / simpan perubahan. Cloudflare akan memperbarui website bila otomatis deploy aktif.
+6. Buka halaman contoh Royal 1, lalu refresh paksa browser atau coba mode privat jika masih ada cache.
 
-FITUR:
-- Royal Botanical bernuansa sage green, ivory dan antique gold, tema halus tanpa foto orang.
-- Susunan tetap: sampul, pembukaan, mempelai, hitung mundur, akad, resepsi, kisah, hadiah, ucapan, penutup.
-- Nama contoh Arga & Sekar ada di seluruh bagian.
-- Musik berasal dari file video yang Anda kirim.
-- Tulisan mengambang dan berubah lembut berdasarkan energi musik; baris ucapan muncul berurutan sepanjang 25 detik lalu berulang.
-- Ucapan pada template ini hanya disimpan di browser perangkat (belum dihubungkan ke Firebase).
-- Informasi pembayaran pada contoh sengaja belum diaktifkan.
+PENTING: Jangan menghapus file lain. Update ini hanya contoh Royal 1,
+tidak mengubah Basic, Premium, Royal buku, admin, ataupun Firebase.
 
-CATATAN: Ini hanya file update Royal. Belum mengubah website yang online.
+Tampilan: terinspirasi dari video rujukan (bingkai melengkung, pepohonan, ornamen, bangunan klasik), bukan versi sampul minimalis.
+Musik: video terbaru yang Anda kirim, dikonversi menjadi MP3.
+Nama contoh: Arga & Sekar. Form ucapan contoh disimpan lokal di perangkat.
