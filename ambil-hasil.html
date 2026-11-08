@@ -26,6 +26,28 @@ body:after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opaci
 .panel>*{position:relative;z-index:1}
 @keyframes kk-sheen{0%,15%{transform:translateX(-60%) rotate(-8deg)}65%,100%{transform:translateX(60%) rotate(-8deg)}}
 @media(prefers-reduced-motion:reduce){.panel:after{display:none}}
+</style><style id="kk-pickup-batik-silver-2026">
+:root{--kk-navy:#101113;--kk-blue:#25272b;--kk-gold:#d5d9df;--kk-line:rgba(211,217,226,.38);--kk-text:#f5f5f6;--kk-muted:#bdc2ca;color-scheme:dark}
+html{background:#08090c!important}
+body{background:radial-gradient(ellipse at 15% 5%,#3b3e47 0,transparent 43%),radial-gradient(ellipse at 85% 90%,#282b34 0,transparent 48%),linear-gradient(150deg,#07080a,#18191e 58%,#090a0d)!important;color:#f5f5f6!important}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.25!important;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='170' height='170' viewBox='0 0 170 170'%3E%3Cg fill='none' stroke='%23c4c8d1' stroke-width='1.15' opacity='.6'%3E%3Cpath d='M85 12 C111 30 111 52 85 66 C59 52 59 30 85 12ZM85 158 C111 140 111 118 85 104 C59 118 59 140 85 158Z'/%3E%3Cpath d='M12 85 C30 59 52 59 66 85 C52 111 30 111 12 85ZM158 85 C140 59 118 59 104 85 C118 111 140 111 158 85Z'/%3E%3Cpath d='M85 66 Q104 66 104 85 Q104 104 85 104 Q66 104 66 85 Q66 66 85 66Z'/%3E%3Cpath d='M85 74 Q96 85 85 96 Q74 85 85 74ZM37 37 Q58 34 64 57 Q42 57 37 37ZM133 37 Q112 34 106 57 Q128 57 133 37ZM37 133 Q58 136 64 113 Q42 113 37 133ZM133 133 Q112 136 106 113 Q128 113 133 133Z'/%3E%3Cpath d='M85 0V12M85 158V170M0 85H12M158 85H170'/%3E%3C/g%3E%3C/svg%3E")!important;background-size:170px 170px!important}
+main.panel,.panel{position:relative;isolation:isolate;overflow:hidden!important;max-width:640px!important;background:linear-gradient(155deg,#25272deF,#0e1015f8)!important;border:1px solid #aeb4c2a8!important;border-radius:24px!important;box-shadow:0 26px 85px #000b,0 0 0 5px #dce0e80d!important}
+.panel:before,.panel:after{content:"";position:absolute;pointer-events:none;left:18px;right:18px;height:17px;opacity:.72;background:repeating-linear-gradient(90deg,transparent 0 13px,#9ca2ae 13px 14px,transparent 14px 27px),linear-gradient(90deg,transparent,#b7becb,transparent);background-size:100% 1px,100% 1px;background-position:center center;background-repeat:no-repeat}
+.panel:before{top:10px}.panel:after{bottom:10px}
+h1{font-family:Georgia,serif!important;color:#f0f1f5!important;text-align:center;font-weight:500!important;letter-spacing:-.03em!important;text-shadow:0 2px 18px #ffffff16}
+.panel>div:first-child{filter:grayscale(1) brightness(1.6);font-size:30px!important}
+.panel>p{text-align:center;color:#c4c8d1!important}
+.panel label{color:#e7e8ed!important;font-weight:700!important}
+#code{background:#090b10!important;border:1px solid #a6adbb!important;color:#fff!important;letter-spacing:.07em!important;border-radius:12px!important;box-shadow:inset 0 1px 8px #0007!important}
+#code::placeholder{color:#969ca9!important}
+#code:focus{outline:2px solid #e0e4eb80!important;border-color:#f0f2f6!important}
+#lookup button{background:linear-gradient(120deg,#f4f5f8,#b5bac5 48%,#e1e4e9)!important;color:#17191f!important;border:1px solid #f7f8fa!important;font-weight:800!important;box-shadow:0 5px 20px #0006!important}
+#lookup button:active{transform:scale(.99)}
+.notice,.entry,#result{background:linear-gradient(145deg,#292c34,#15171c)!important;color:#e7e9ef!important;border:1px solid #939ba8!important;border-radius:15px!important}
+.panel a{color:#d7dce6!important;text-decoration-color:#8d95a4!important}
+.panel small{color:#b8bec8!important}
+@media(max-width:680px){body{padding:14px!important}.panel{margin:23px auto!important;padding:30px 22px!important;border-radius:19px!important}h1{font-size:clamp(29px,8vw,39px)!important}#code{font-size:16px!important}}
+@media(prefers-reduced-motion:reduce){#lookup button{transition:none!important}}
 </style></head><body><main class="panel"><div style="text-align:center;font-size:36px">🎁</div><h1>Ambil Hasil Pesanan</h1><p>Masukkan kode rahasia yang diberikan setelah pesanan selesai.</p><form id="lookup"><label>Kode pesanan<input id="code" required autocomplete="off" placeholder="KK-..." maxlength="60"></label><button>Lihat Hasil Pesanan ✨</button></form><div id="result" role="status" class="notice hidden"></div><p><small>Jaga kode ini agar tidak diketahui orang lain. Link dari layanan penyimpanan eksternal mungkin memiliki pengaturan akses tersendiri.</small></p><a href="index.html">← Kembali ke Beranda</a></main><script type="module">
 import {initializeApp} from 'https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js';
 import {getFirestore,doc,getDoc} from 'https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js';
