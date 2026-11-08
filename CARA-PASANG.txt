@@ -1,0 +1,18 @@
+ROYAL BOTANICAL — ARGA & SEKAR (TEMA BARU)
+
+1. ZIP ini berisi royal.html dan musik-royal-elegan.mp3.
+2. Simpan KEDUA file dalam folder yang sama. Jangan ubah nama file MP3 tanpa mengubah src di royal.html.
+3. Jika memperbarui GitHub/Cloudflare, ganti hanya halaman royal.html dan unggah MP3 pada folder yang sama.
+4. Jangan menghapus bagian Basic, Premium, admin, atau konfigurasi Firebase pada website utama.
+5. Buka royal.html untuk melihat contoh. Tekan tombol "Buka Undangan" agar musik mulai (peramban HP tidak mengizinkan suara autoplay sebelum interaksi).
+
+FITUR:
+- Royal Botanical bernuansa sage green, ivory dan antique gold, tema halus tanpa foto orang.
+- Susunan tetap: sampul, pembukaan, mempelai, hitung mundur, akad, resepsi, kisah, hadiah, ucapan, penutup.
+- Nama contoh Arga & Sekar ada di seluruh bagian.
+- Musik berasal dari file video yang Anda kirim.
+- Tulisan mengambang dan berubah lembut berdasarkan energi musik; baris ucapan muncul berurutan sepanjang 25 detik lalu berulang.
+- Ucapan pada template ini hanya disimpan di browser perangkat (belum dihubungkan ke Firebase).
+- Informasi pembayaran pada contoh sengaja belum diaktifkan.
+
+CATATAN: Ini hanya file update Royal. Belum mengubah website yang online.
