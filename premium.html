@@ -20,7 +20,9 @@
 .frame>.cover{inset:0!important}
 .frame>.bar{bottom:0!important}
 .frame>footer .music{position:absolute!important;right:18px!important;bottom:20px!important;z-index:12!important;display:grid!important}
-.floating-music{position:absolute!important;right:18px!important;bottom:20px!important;z-index:12!important;display:grid!important}
+.floating-music{position:absolute!important;right:18px!important;bottom:20px!important;z-index:30!important;display:grid!important;touch-action:manipulation!important;pointer-events:auto!important;cursor:pointer!important;opacity:1!important;visibility:visible!important;-webkit-tap-highlight-color:transparent}
+.cover.hidden{visibility:hidden!important;pointer-events:none!important}
+.floating-music:active{transform:scale(.9)!important}
 </style></head><body><div class="frame"><header class="header"><a href="index.html">← KITA-KITA UNDANGAN</a><span>PREMIUM / EDITORIAL</span></header><main class="paper" id="paper" aria-label="Gulir kertas undangan">
 <section class="page reveal"><div class="sun"></div><p class="eyebrow">A celebration of love</p><div class="names">Amara<i>&amp;</i>Arjuna</div><div class="line"></div><p>Dengan penuh rasa syukur, kami mengundang Anda menjadi bagian dari hari istimewa kami.</p><span class="date">20 · 02 · 2031</span><p style="margin-top:30px;font-size:10px;letter-spacing:.15em">GULIR KERTAS ↓</p></section>
 <section class="page reveal"><div class="sun small"></div><p class="eyebrow">Our Invitation</p><h2>Untuk<br>Orang-Orang<br>Tersayang</h2><div class="rule"></div><p>Setiap perjalanan memiliki cerita, dan setiap cerita terasa lebih berarti ketika dirayakan bersama orang-orang tercinta.</p></section>
@@ -33,9 +35,12 @@
 <section class="page reveal"><p class="eyebrow">Kita-Kita Undangan</p><h2>Your Story,<br>Your Design.</h2><p>Jadikan Royal Editorial sebagai undangan istimewamu.</p><a class="btn" href="pesan.html?paket=PREMIUM">PESAN PAKET PREMIUM</a></section>
 </main><div class="bar" id="bar"></div><footer class="footer"><span id="counter">01 / 09 · SCROLL</span></footer><button class="music floating-music" id="musicBtn" aria-pressed="false" aria-label="Putar musik" title="Musik ON/OFF" type="button">♪</button><div class="cover" id="cover"><div class="cover-inner"><p class="eyebrow">Premium Terracotta Editorial</p><div class="cover-divider"></div><h1>Our<br><em>Wedding</em><br>Story.</h1><p>Sebuah kisah yang layak dirayakan. Dibuat istimewa untuk orang-orang tercinta.</p><button class="btn" type="button" id="openBtn">BUKA UNDANGAN</button><p class="cover-credit" style="font-size:10px;margin-top:24px">KITA-KITA UNDANGAN · CONTOH</p></div></div></div><audio id="inviteMusic" src="musik-premium.mp3" preload="none" loop></audio><script>
 const paper=document.getElementById('paper'),pages=[...paper.querySelectorAll('.page')],audio=document.getElementById('inviteMusic'),musicBtn=document.getElementById('musicBtn');
-function updateMusic(){let on=!audio.paused;musicBtn.textContent=on?'♫':'♪';musicBtn.setAttribute('aria-pressed',String(on));musicBtn.setAttribute('aria-label',on?'Hentikan musik':'Putar musik')}
-document.getElementById('openBtn').addEventListener('click',async()=>{document.getElementById('cover').classList.add('hidden');paper.scrollTop=0;pages[0].classList.add('visible');try{await audio.play()}catch(e){}updateMusic()});
-musicBtn.addEventListener('click',async()=>{if(audio.paused){try{await audio.play()}catch(e){}}else audio.pause();updateMusic()});audio.addEventListener('play',updateMusic);audio.addEventListener('pause',updateMusic);
+function updateMusic(){const on=!audio.paused;musicBtn.textContent=on?'♫':'♪';musicBtn.setAttribute('aria-pressed',String(on));musicBtn.setAttribute('aria-label',on?'Matikan musik':'Nyalakan musik');musicBtn.title=on?'Matikan musik':'Nyalakan musik';}
+async function toggleMusic(){if(!audio.paused){audio.pause();updateMusic();return;}try{audio.muted=false;audio.volume=1;await audio.play();}catch(err){musicBtn.title='Musik gagal diputar. Periksa suara dan coba lagi.';musicBtn.textContent='!';}updateMusic();}
+document.getElementById('openBtn').addEventListener('click',()=>{document.getElementById('cover').classList.add('hidden');paper.scrollTop=0;pages[0].classList.add('visible');});
+musicBtn.addEventListener('click',toggleMusic);
+audio.addEventListener('play',updateMusic);audio.addEventListener('pause',updateMusic);audio.addEventListener('ended',updateMusic);
+updateMusic();
 function progress(){const max=Math.max(1,paper.scrollHeight-paper.clientHeight);document.getElementById('bar').style.width=paper.scrollTop/max*100+'%';const i=Math.min(pages.length,Math.max(1,Math.round(paper.scrollTop/Math.max(1,paper.clientHeight))+1));document.getElementById('counter').textContent=String(i).padStart(2,'0')+' / '+String(pages.length).padStart(2,'0')+' · SCROLL'}
 paper.addEventListener('scroll',progress,{passive:true});if('IntersectionObserver'in window){const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{root:paper,threshold:.1});pages.forEach(p=>obs.observe(p))}else pages.forEach(p=>p.classList.add('visible'));progress();
 </script></body></html>
