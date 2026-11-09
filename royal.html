@@ -180,6 +180,23 @@ body{--outside:#e8e1d7;--paper:#faf7f1;--text:#443e39;--muted:#796e65;--accent:#
 .float-music[aria-pressed=true]{background:#a78064!important;color:#fffaf3!important}
 .demo-footer{color:#76665a!important}
 @media(max-width:430px){.cover-card{min-height:calc(100svh - 28px)!important}.chapter{padding:100px 28px!important}.chapter:before{inset:12px!important}}
+
+/* One-screen invitation dashboard: only the paper scrolls */
+html{height:100%;overflow:hidden!important;scroll-snap-type:none!important}
+body{height:100dvh;min-height:100svh;overflow:hidden!important;display:flex;flex-direction:column;position:relative}
+.tiny-nav{flex:0 0 54px!important;height:54px!important;width:min(100%,640px);z-index:5;padding:0 18px!important}
+.invitation{flex:1 1 auto;min-height:0!important;height:auto!important;width:min(calc(100% - 18px),640px)!important;margin:0 auto 9px!important;overflow-x:hidden!important;overflow-y:auto!important;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;scroll-behavior:smooth;scroll-snap-type:y proximity;scrollbar-width:thin;scrollbar-color:#bd9d84 transparent}
+.invitation .hero,.invitation .chapter{scroll-snap-align:start;min-height:100%!important;min-height:100cqh!important}
+.invitation{container-type:size}
+.invitation .hero{padding:90px 30px 70px!important}
+.invitation .chapter{padding:100px 32px!important}
+.demo-footer{display:none!important}
+#cover{position:fixed!important;inset:0!important;z-index:100!important}
+.float-music{bottom:calc(20px + env(safe-area-inset-bottom))!important;right:max(20px,calc((100vw - 620px)/2))!important}
+.js .reveal{opacity:0;transform:translateY(45px) scale(.97);filter:blur(7px);transition:opacity .95s cubic-bezier(.2,.8,.2,1),transform .95s cubic-bezier(.2,.8,.2,1),filter .95s ease}
+.js .reveal.visible{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}
+@media(max-width:430px){.tiny-nav{flex-basis:48px!important;height:48px!important}.invitation{width:calc(100% - 12px)!important;margin-bottom:6px!important}.invitation .hero{padding:85px 24px 65px!important}.invitation .chapter{padding:90px 25px!important}.float-music{right:14px!important;bottom:calc(12px + env(safe-area-inset-bottom))!important}}
+@media(prefers-reduced-motion:reduce){.invitation{scroll-behavior:auto;scroll-snap-type:none}.js .reveal{filter:none;transform:none;opacity:1}}
 </style></head>
 <body class="royal"><a href="#invitation" class="skip-link">Lewati sampul</a>
 <div id="cover" aria-label="Sampul undangan"><div class="cover-card"><svg class="branch left" aria-hidden="true" viewBox="0 0 190 280" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M94 278C96 222 63 204 94 151C120 106 74 80 101 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><g stroke="currentColor" stroke-width="1.3"><path d="M94 245C59 247 48 228 44 214C73 203 91 226 94 245Z"/><path d="M94 210C127 203 141 183 146 162C114 161 96 185 94 210Z"/><path d="M82 180C56 181 36 164 34 147C66 140 79 161 82 180Z"/><path d="M98 145C130 129 142 108 143 91C113 94 100 121 98 145Z"/><path d="M91 112C59 114 49 97 48 80C74 77 87 96 91 112Z"/><path d="M100 73C128 59 141 41 140 25C112 28 101 50 100 73Z"/></g><g fill="currentColor" opacity=".55"><circle cx="35" cy="129" r="2"/><circle cx="146" cy="148" r="2"/><circle cx="153" cy="85" r="2"/></g></svg><svg class="branch right" aria-hidden="true" viewBox="0 0 190 280" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M94 278C96 222 63 204 94 151C120 106 74 80 101 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><g stroke="currentColor" stroke-width="1.3"><path d="M94 245C59 247 48 228 44 214C73 203 91 226 94 245Z"/><path d="M94 210C127 203 141 183 146 162C114 161 96 185 94 210Z"/><path d="M82 180C56 181 36 164 34 147C66 140 79 161 82 180Z"/><path d="M98 145C130 129 142 108 143 91C113 94 100 121 98 145Z"/><path d="M91 112C59 114 49 97 48 80C74 77 87 96 91 112Z"/><path d="M100 73C128 59 141 41 140 25C112 28 101 50 100 73Z"/></g><g fill="currentColor" opacity=".55"><circle cx="35" cy="129" r="2"/><circle cx="146" cy="148" r="2"/><circle cx="153" cy="85" r="2"/></g></svg><div class="cover-content"><div class="cover-kicker">KITA-KITA UNDANGAN · ROYAL SIGNATURE</div><div class="seal">♛</div><div class="eyebrow">ROYAL IVORY ATELIER</div><h2>A Royal<span>Love Story</span></h2><div class="decor-line"></div><p>Sebuah kisah cinta dalam kehangatan doa dan restu.</p><button type="button" class="action" id="openBtn">Buka Undangan <span aria-hidden="true">↗</span></button><p class="demo-label" style="margin-top:22px">Royal Signature · Contoh undangan interaktif</p></div></div></div>
@@ -200,9 +217,9 @@ body{--outside:#e8e1d7;--paper:#faf7f1;--text:#443e39;--muted:#796e65;--accent:#
 <script>
 document.documentElement.classList.add('js');
 const cover=document.getElementById('cover');const openBtn=document.getElementById('openBtn');
-openBtn.addEventListener('click',async()=>{cover.classList.add('closed');cover.setAttribute('aria-hidden','true');document.body.style.overflow=''; window.scrollTo({top:0,behavior:'smooth'});try{await document.getElementById('inviteMusic').play()}catch(e){}updateMusic();});
+openBtn.addEventListener('click',async()=>{cover.classList.add('closed');cover.setAttribute('aria-hidden','true');document.getElementById('invitation').scrollTo({top:0,behavior:'instant'});try{await document.getElementById('inviteMusic').play()}catch(e){}updateMusic();});
 if('IntersectionObserver' in window){const o=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');o.unobserve(e.target)}})},{threshold:.07,rootMargin:'0px 0px -15px 0px'});document.querySelectorAll('.reveal').forEach(e=>o.observe(e))}else{document.querySelectorAll('.reveal').forEach(e=>e.classList.add('visible'))}
-window.addEventListener('pageshow',()=>document.querySelectorAll('.reveal').forEach(e=>{if(e.getBoundingClientRect().top<innerHeight)e.classList.add('visible')}));
+window.addEventListener('pageshow',()=>document.querySelectorAll('.reveal').forEach(e=>{const box=document.getElementById('invitation').getBoundingClientRect(),r=e.getBoundingClientRect();if(r.top<box.bottom&&r.bottom>box.top)e.classList.add('visible')}));
 const audio=document.getElementById('inviteMusic'),musicBtn=document.getElementById('musicBtn');function updateMusic(){const on=!audio.paused;musicBtn.textContent=on?'♫ Musik ON':'♫ Musik OFF';musicBtn.setAttribute('aria-pressed',String(on));musicBtn.setAttribute('aria-label',on?'Hentikan musik':'Putar musik undangan')}musicBtn.addEventListener('click',async()=>{if(audio.paused){try{await audio.play()}catch(e){}}else{audio.pause()}updateMusic()});audio.addEventListener('play',updateMusic);audio.addEventListener('pause',updateMusic);
 document.getElementById('rsvpDemo').addEventListener('click',()=>{document.getElementById('rsvpMessage').textContent='Ini hanya contoh fitur RSVP. Konfirmasi asli tersedia pada undangan pelanggan.'});
 </script></body></html>
